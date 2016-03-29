@@ -6,7 +6,7 @@
 
 <struts>
     <package name="default" namespace="/" extends="struts-default">
-        <action name="login" class="main.java.cn.qingtianr.action.Login">
+        <action name="useraction" class="main.java.cn.qingtianr.action.UserAction">
             <result name="success">
                 backend.jsp
             </result>
