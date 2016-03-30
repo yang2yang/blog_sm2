@@ -19,6 +19,7 @@
 
     <mappers>
         <mapper resource="main/java/cn/qingtianr/dao/UserDao.xml"/>
+        <mapper resource="main/java/cn/qingtianr/dao/ArticleDao.xml"/>
     </mappers>
 
 </configuration>
