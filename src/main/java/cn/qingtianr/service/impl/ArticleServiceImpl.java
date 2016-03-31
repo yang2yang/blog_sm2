@@ -5,6 +5,8 @@ import main.java.cn.qingtianr.dbc.MybatisSqlSessionFactory;
 import main.java.cn.qingtianr.model.Article;
 import main.java.cn.qingtianr.service.ArticleService;
 
+import java.util.ArrayList;
+
 /**
  * Created by jack on 16-3-30.
  */
@@ -24,5 +26,24 @@ public class ArticleServiceImpl implements ArticleService{
             MybatisSqlSessionFactory.closeSession();
         }
         return true;
+    }
+
+    @Override
+    public ArrayList showArticle() {
+        ArrayList articlelist = new ArrayList();
+         try{
+             //Todo
+            MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).showArticle();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+        finally
+        {
+            MybatisSqlSessionFactory.closeSession();
+        }
+        return articlelist;
     }
 }

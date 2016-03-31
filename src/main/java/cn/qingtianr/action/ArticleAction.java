@@ -4,6 +4,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import main.java.cn.qingtianr.factory.ServiceFactory;
 import main.java.cn.qingtianr.model.Article;
 
+import java.util.List;
+
 /**
  * Created by jack on 16-3-30.
  */
@@ -11,6 +13,7 @@ public class ArticleAction extends ActionSupport {
     private String title;
     private String archive;
     private String content;
+    private List articlelist;
 
     public String writeArticle()
     {
@@ -20,6 +23,12 @@ public class ArticleAction extends ActionSupport {
         return "lookarticle";
     }
 
+    public String showArticle()
+    {
+        // todo
+        ServiceFactory.getArticleServiceInstance().showArticle();
+        return "lookarticle";
+    }
     public String getTitle() {
         return title;
     }

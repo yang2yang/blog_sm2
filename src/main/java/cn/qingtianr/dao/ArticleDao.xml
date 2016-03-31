@@ -6,5 +6,9 @@
     <select id="addArticle">
         INSERT INTO article(title,archive,content) VALUES (#{title},#{archive},#{content})
     </select>
+<!--这里需要返回一个数组类型的，但是不知道具体怎么写...-->
+    <select id="showArticle" resultType="main.java.cn.qingtianr.model.Article">
+        SELECT * FROM article
+    </select>
 
 </mapper>
