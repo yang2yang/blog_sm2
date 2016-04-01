@@ -15,10 +15,16 @@
             </result>
         </action>
 
-        <action name="articleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="writeArticle">
+        <!--<action name="articleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="writeArticle">-->
+            <!--<result name="lookarticle">-->
+                <!--lookarticle.jsp-->
+            <!--</result>-->
+        <!--</action>-->
+
+        <action name="articleactionshow" class="main.java.cn.qingtianr.action.ArticleAction" method="showArticle">
             <result name="lookarticle">
-                lookarticle.jsp
+               lookarticle.jsp
             </result>
-        </action>
+                </action>
     </package>
 </struts>
