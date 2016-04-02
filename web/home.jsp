@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: jack
@@ -14,7 +15,11 @@
   <p>主页</p>
   <p>登录</p>
   <p>文章列表:</p>
-  <p>文章一标题</p>
-  <p>文章一内容</p>
+  <s:iterator value="articlelist" var="name">
+    <s:property value="#name.title"/><br/>
+    <s:property value="#name.archive"/><br/>
+    <s:property value="#name.content"/><br/>
+  </s:iterator>
+  <s:debug/>
   </body>
 </html>

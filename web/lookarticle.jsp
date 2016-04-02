@@ -22,10 +22,10 @@
     <%--<s:property value="#name"/><br/>--%>
 <%--</s:iterator>--%>
 <s:iterator value="articlelist" var="name">
-    <s:property value="name"/><br/>
+    <s:property value="#name.title"/><br/>
+    <s:property value="#name.archive"/><br/>
+    <s:property value="#name.content"/><br/>
 </s:iterator>
-<s:property value="test"/>
-<s:property value="content"/>
 <s:debug/>
 </body>
 </html>

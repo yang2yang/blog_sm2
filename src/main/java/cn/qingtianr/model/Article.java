@@ -8,6 +8,10 @@ public class Article {
     private String archive;
     private String content;
 
+    public Article(){
+
+    }
+
     public Article(String title, String archive, String content) {
         this.title = title;
         this.archive = archive;

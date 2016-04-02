@@ -12,7 +12,7 @@ public class ArticleAction extends ActionSupport {
     private String title;
     private String archive;
     private String content;
-    private ArrayList<String> articlelist;
+    private ArrayList<Article> articlelist;
     private String test;
 
     public String writeArticle()
@@ -20,27 +20,15 @@ public class ArticleAction extends ActionSupport {
         // todo
         Article article = new Article(title,archive,content);
         ServiceFactory.getArticleServiceInstance().addArticle(article);
-        content = "212123";
-        test = "1";
-        articlelist = new ArrayList();
-        articlelist.add("aaa");
-        articlelist.add("bbb");
-        articlelist.add("ccc");
         return "lookarticle";
     }
 
     public String showArticle()
     {
-        // todo
-//        articlelist = ServiceFactory.getArticleServiceInstance().showArticle();
-        System.out.println("hello I'm showArticle");
-        test = "I'm test";
-        content = "123";
-        articlelist = new ArrayList();
-        articlelist.add("aaa");
-        articlelist.add("bbb");
-        articlelist.add("ccc");
-        return "lookarticle";
+        articlelist = ServiceFactory.getArticleServiceInstance().showArticle();
+//        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
+//        System.out.println("hello I'm showArticle");
+        return "home";
     }
     public String getTitle() {
         return title;
@@ -77,7 +65,7 @@ public class ArticleAction extends ActionSupport {
     {
        this.articlelist = arraylist;
     }
-    public ArrayList<String> getArticlelist()
+    public ArrayList<Article> getArticlelist()
     {
        return articlelist;
     }

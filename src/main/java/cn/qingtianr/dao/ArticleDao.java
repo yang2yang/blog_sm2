@@ -9,5 +9,5 @@ import java.util.ArrayList;
  */
 public interface ArticleDao {
     public Boolean addArticle(Article article);
-    public ArrayList showArticle();
+    public ArrayList<Article> showArticle();
 }

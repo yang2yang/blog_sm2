@@ -29,11 +29,12 @@ public class ArticleServiceImpl implements ArticleService{
     }
 
     @Override
-    public ArrayList showArticle() {
-        ArrayList articlelist = new ArrayList();
+    public ArrayList<Article> showArticle() {
+        ArrayList<Article> articlelist = new ArrayList();
          try{
              //Todo
-            MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).showArticle();
+            articlelist = MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).showArticle();
+             System.out.println("article[0].title = " + articlelist.get(0).getTitle());
         }
         catch (Exception e)
         {

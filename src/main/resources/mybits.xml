@@ -3,6 +3,7 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="User" type="main.java.cn.qingtianr.model.User"></typeAlias>
+        <typeAlias alias="Article" type="main.java.cn.qingtianr.model.Article"></typeAlias>
     </typeAliases>
 
     <environments default="development">
