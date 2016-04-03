@@ -5,6 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.devMode" value="true"/>
     <package name="default" namespace="/" extends="struts-default">
         <action name="useraction" class="main.java.cn.qingtianr.action.UserAction">
             <result name="success">
@@ -22,9 +23,14 @@
         </action>
 
         <action name="articleactionshow" class="main.java.cn.qingtianr.action.ArticleAction" method="showArticle">
-            <result name="home">
-               home.jsp
+            <result name="lookarticle">
+                lookarticle.jsp
             </result>
-                </action>
+        </action>
+        <action name="getarticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="getOneArticle">
+            <result name="post">
+                post.jsp
+            </result>
+        </action>
     </package>
 </struts>

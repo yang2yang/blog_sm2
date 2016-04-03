@@ -10,5 +10,7 @@ import java.util.ArrayList;
 public interface ArticleService{
     public boolean addArticle(Article article);
 
-    public ArrayList showArticle();
+    public ArrayList<Article> showArticle();
+
+    public Article getOneArticle(String title);
 }

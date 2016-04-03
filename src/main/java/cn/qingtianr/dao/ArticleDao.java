@@ -10,4 +10,5 @@ import java.util.ArrayList;
 public interface ArticleDao {
     public Boolean addArticle(Article article);
     public ArrayList<Article> showArticle();
+    public Article getOneArticle(String title);
 }

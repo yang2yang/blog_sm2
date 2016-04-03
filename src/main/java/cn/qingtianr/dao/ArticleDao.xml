@@ -17,4 +17,8 @@
         SELECT * FROM article
     </select>
 
+    <select id="getOneArticle" parameterType="String" resultType="Article">
+        SELECT * FROM article WHERE title = #{title}
+    </select>
+
 </mapper>

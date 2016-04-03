@@ -21,11 +21,15 @@
 <%--<s:iterator value="{'1','2','3'}" var="name">--%>
     <%--<s:property value="#name"/><br/>--%>
 <%--</s:iterator>--%>
+
 <s:iterator value="articlelist" var="name">
-    <s:property value="#name.title"/><br/>
+    <%--通过这个url来传递http的参数--%>
+    <s:url action="getarticleaction" namespace="/" id="getArticleId">
+        <s:param name="title" value="#name.title"></s:param>
+    </s:url>
+    <s:a href="%{getArticleId}"><s:property value="#name.title"/></s:a><br/>
     <s:property value="#name.archive"/><br/>
     <s:property value="#name.content"/><br/>
 </s:iterator>
-<s:debug/>
 </body>
 </html>

@@ -47,4 +47,23 @@ public class ArticleServiceImpl implements ArticleService{
         }
         return articlelist;
     }
+
+    @Override
+    public Article getOneArticle(String title) {
+        Article article = new Article();
+        try{
+            article = MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).getOneArticle(title);
+            System.out.println("hello article.title = " + article.getTitle());
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+        finally
+        {
+            MybatisSqlSessionFactory.closeSession();
+        }
+        return article;
+    }
 }

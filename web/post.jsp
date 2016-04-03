@@ -2,19 +2,21 @@
 <%--
   Created by IntelliJ IDEA.
   User: jack
-  Date: 16-3-23
-  Time: 下午5:25
+  Date: 16-4-3
+  Time: 下午3:18
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>后台页面</title>
+    <title>每一篇文章的内容</title>
 </head>
 <body>
-<p>下面的都弄成超链接</p>
-<p><s:a href="writearticle.jsp">写文章</s:a><p>
-<p><s:a href="articleactionshow">看文章</s:a></p>
-<p>设置(改密码什么的)</p>
+<s:iterator value="article" var="name">
+    <s:property value="#name.title" />
+    <s:property value="#name.archive" />
+    <s:property value="#name.content" />
+</s:iterator>
+<s:debug/>
 </body>
 </html>

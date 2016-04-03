@@ -12,14 +12,10 @@
     <title>blog_struts2</title>
   </head>
   <body>
-  <p>主页</p>
-  <p>登录</p>
+  <p><s:a href="home.jsp">主页</s:a></p>
+  <p><s:a href="login.jsp">登录</s:a></p>
   <p>文章列表:</p>
-  <s:iterator value="articlelist" var="name">
-    <s:property value="#name.title"/><br/>
-    <s:property value="#name.archive"/><br/>
-    <s:property value="#name.content"/><br/>
-  </s:iterator>
+  <s:action name="articleactionshow" namespace="/" executeResult="true"/>
   <s:debug/>
   </body>
 </html>

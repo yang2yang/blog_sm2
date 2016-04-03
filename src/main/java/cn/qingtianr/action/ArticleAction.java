@@ -14,12 +14,14 @@ public class ArticleAction extends ActionSupport {
     private String content;
     private ArrayList<Article> articlelist;
     private String test;
+    private Article article;
 
     public String writeArticle()
     {
         // todo
         Article article = new Article(title,archive,content);
         ServiceFactory.getArticleServiceInstance().addArticle(article);
+        articlelist = ServiceFactory.getArticleServiceInstance().showArticle();
         return "lookarticle";
     }
 
@@ -27,9 +29,16 @@ public class ArticleAction extends ActionSupport {
     {
         articlelist = ServiceFactory.getArticleServiceInstance().showArticle();
 //        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
-//        System.out.println("hello I'm showArticle");
-        return "home";
+        System.out.println("hello I'm showArticle");
+        return "lookarticle";
     }
+
+    public String getOneArticle()
+    {
+        article = ServiceFactory.getArticleServiceInstance().getOneArticle(title);
+        return "post";
+    }
+
     public String getTitle() {
         return title;
     }
@@ -68,5 +77,14 @@ public class ArticleAction extends ActionSupport {
     public ArrayList<Article> getArticlelist()
     {
        return articlelist;
+    }
+
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
     }
 }

@@ -9,9 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<%--<s:action name="articleactionshow"/>--%>
-<s:form action="articleactionshow">
-    <s:submit value="tijiao"/>
-    </s:form>
+<s:action name="articleactionshow" namespace="/" executeResult="true"/>
 </body>
 </html>
