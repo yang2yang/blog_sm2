@@ -12,6 +12,7 @@
     <title>每一篇文章的内容</title>
 </head>
 <body>
+<%--这里好像不需要使用循环吧--%>
 <s:iterator value="article" var="name">
     <s:property value="#name.title" />
     <s:property value="#name.archive" />

@@ -13,4 +13,6 @@ public interface ArticleService{
     public ArrayList<Article> showArticle();
 
     public Article getOneArticle(String title);
+
+    public boolean updateArticle(Article article);
 }

@@ -12,6 +12,7 @@
           <element id="library" level="project" name="Struts 2-2.3.20.1" />
           <element id="file-copy" path="$USER_HOME$/Downloads/mysql-connector-java-5.1.38-bin.jar" />
           <element id="file-copy" path="$USER_HOME$/Downloads/mybatis-3.0.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/mybatis-3.2.2.jar" />
         </element>
       </element>
     </root>

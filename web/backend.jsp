@@ -14,7 +14,7 @@
 <body>
 <p>下面的都弄成超链接</p>
 <p><s:a href="writearticle.jsp">写文章</s:a><p>
-<p><s:a href="articleactionshow">看文章</s:a></p>
+<p><s:a href="managearticleaction">看文章</s:a></p>
 <p>设置(改密码什么的)</p>
 </body>
 </html>

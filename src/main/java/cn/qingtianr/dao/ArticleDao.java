@@ -11,4 +11,5 @@ public interface ArticleDao {
     public Boolean addArticle(Article article);
     public ArrayList<Article> showArticle();
     public Article getOneArticle(String title);
+    public int updateArticle(Article article);
 }

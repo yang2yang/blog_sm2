@@ -32,5 +32,20 @@
                 post.jsp
             </result>
         </action>
+        <action name="managearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="manageArticle">
+            <result name="managearticle">
+                managearticle.jsp
+            </result>
+        </action>
+        <action name="updatearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateArticle">
+            <result name="updateOneArticle">
+                updateOneArticle.jsp
+            </result>
+        </action>
+        <action name="updateonearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateOneArticle">
+        <result name="success">
+            success.jsp
+        </result>
+        </action>
     </package>
 </struts>

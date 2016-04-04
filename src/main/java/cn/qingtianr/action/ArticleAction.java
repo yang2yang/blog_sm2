@@ -39,6 +39,24 @@ public class ArticleAction extends ActionSupport {
         return "post";
     }
 
+    public String updateArticle()
+    {
+        article = ServiceFactory.getArticleServiceInstance().getOneArticle(title);
+        return "updateOneArticle";
+    }
+
+    public String updateOneArticle()
+    {
+        ServiceFactory.getArticleServiceInstance().updateArticle(article);
+        return "success";
+    }
+    public String manageArticle()
+    {
+        articlelist = ServiceFactory.getArticleServiceInstance().showArticle();
+        System.out.println("It is in managearticle!!");
+        return "managearticle";
+    }
+
     public String getTitle() {
         return title;
     }
