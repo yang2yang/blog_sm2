@@ -47,5 +47,10 @@
             success.jsp
         </result>
         </action>
+        <action name="deletearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="deleteArticle">
+            <result name="success">
+                success.jsp
+            </result>
+        </action>
     </package>
 </struts>

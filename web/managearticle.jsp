@@ -17,9 +17,12 @@
     <s:url action="updatearticleaction" namespace="/" id="updateArticleId">
         <s:param name="title" value="#name.title"></s:param>
     </s:url>
+    <s:url action="deletearticleaction" namespace="/" id="deleteArticleId">
+        <s:param name="title" value="#name.title"></s:param>
+    </s:url>
     <s:property value="#name.title"/>
-    <s:a href="%{updateArticleId}">修改</s:a><br/>
-    <%--<s:a href="">修改</s:a><br/>--%>
+    <s:a href="%{updateArticleId}">修改</s:a>
+    <s:a href="%{deleteArticleId}">删除</s:a><br/>
 </s:iterator>
 </body>
 </html>

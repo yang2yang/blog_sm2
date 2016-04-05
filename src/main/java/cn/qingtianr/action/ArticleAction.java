@@ -57,6 +57,12 @@ public class ArticleAction extends ActionSupport {
         return "managearticle";
     }
 
+    public String deleteArticle()
+    {
+        ServiceFactory.getArticleServiceInstance().deleteArticle(title);
+        return "success";
+    }
+
     public String getTitle() {
         return title;
     }

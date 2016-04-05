@@ -73,9 +73,8 @@ public class ArticleServiceImpl implements ArticleService{
             System.out.println(article.getTitle());
             System.out.println(article.getArchive());
             System.out.println(article.getContent());
-            int s = MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).updateArticle(article);
+            MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).updateArticle(article);
             System.out.println("hello It is in updateArticle");
-            System.out.println(s);
         }
         catch (Exception e)
         {
@@ -87,5 +86,27 @@ public class ArticleServiceImpl implements ArticleService{
             MybatisSqlSessionFactory.closeSession();
         }
         return true;
+    }
+
+    @Override
+    public boolean deleteArticle(String title) {
+        try{
+            System.out.println(title);
+            int s = 9;
+            MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).deleteArticle(title);
+            System.out.println("hello It is in deleteArticle");
+            System.out.println("s="+s);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+        finally
+        {
+            MybatisSqlSessionFactory.closeSession();
+        }
+        return true;
+
     }
 }

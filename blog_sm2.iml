@@ -46,7 +46,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/mybatis-3.2.2.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/mybatis-3.0.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
