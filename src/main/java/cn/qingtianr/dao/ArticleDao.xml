@@ -6,9 +6,9 @@
 <mapper namespace="main.java.cn.qingtianr.dao.ArticleDao">
 
     <!--传递的是一个对象，但是还是可以直接识别出来东西吗？？猛然发现这里是一个插入语句但是我使用的是却是选择的标签-->
-    <insert id="addArticle">
+    <select id="addArticle">
         INSERT INTO article(title,archive,content) VALUES (#{title},#{archive},#{content})
-    </insert>
+    </select>
 <!--这里需要返回一个数组类型的，但是不知道具体怎么写...-->
     <!--这里使用一个resultMap来返回一个对象数组-->
     <resultMap id="ArticleResultMap" type="Article">
@@ -25,11 +25,11 @@
         SELECT * FROM article WHERE title = #{title}
     </select>
 
-    <update id="updateArticle" parameterType="main.java.cn.qingtianr.model.Article">
+    <select id="updateArticle" parameterType="main.java.cn.qingtianr.model.Article">
         update article set archive = #{archive} , content =#{content} where title = #{title}
-    </update>
+    </select>
 
-    <delete id="deleteArticle">
+    <select id="deleteArticle">
         DELETE FROM article WHERE title = #{title}
-    </delete>
+    </select>
 </mapper>

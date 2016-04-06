@@ -8,9 +8,9 @@ import java.util.ArrayList;
  * Created by jack on 16-3-30.
  */
 public interface ArticleDao {
-    public int addArticle(Article article);
+    public Boolean addArticle(Article article);
     public ArrayList<Article> showArticle();
     public Article getOneArticle(String title);
-    public void updateArticle(Article article);
-    public void deleteArticle(String title);
+    public Boolean updateArticle(Article article);
+    public Boolean deleteArticle(String title);
 }
