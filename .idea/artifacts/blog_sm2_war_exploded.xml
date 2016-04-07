@@ -11,6 +11,8 @@
           <element id="library" level="project" name="Spring-4.2.5.RELEASE" />
           <element id="library" level="project" name="Struts 2-2.3.20.1" />
           <element id="file-copy" path="$USER_HOME$/Downloads/mybatis-3.0.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/markdown-taglib-1.1.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/pegdown-1.6.0.jar" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="blog_sm2/web/Web" />

@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%--<%@ taglib uri='http://ur6lad.co.ua/markdown-taglib' prefix ='md' %>--%>
 <%--
   Created by IntelliJ IDEA.
   User: jack
@@ -30,6 +31,8 @@
     <s:a href="%{getArticleId}"><s:property value="#name.title"/></s:a><br/>
     <s:property value="#name.archive"/><br/>
     <s:property value="#name.content"/><br/>
+    <%-- 这里通过Markdown渲染一下--%>
+    <%--<md:render text="Markdown _is_ __cool__!"/>--%>
 </s:iterator>
 </body>
 </html>
