@@ -10,24 +10,43 @@
       <schema id="1" name="blog"/>
       <table id="2" parent="1" name="user"/>
       <table id="3" parent="1" name="article"/>
-      <column id="4" parent="2" name="username">
+      <table id="4" parent="1" name="archive_table"/>
+      <column id="5" parent="2" name="username">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="5" parent="2" name="password">
+      <column id="6" parent="2" name="password">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="6" parent="3" name="title">
+      <column id="7" parent="3" name="title">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="7" parent="3" name="archive">
+      <column id="8" parent="3" name="archive">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="8" parent="3" name="content">
+      <column id="9" parent="3" name="content">
         <data-type>varchar(100)</data-type>
       </column>
-      <key id="9" parent="3" name="PRIMARY">
+      <index id="10" parent="3" name="article_archive_table_archive_fk">
+        <columns>archive</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="11" parent="3" name="PRIMARY">
         <columns>title</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="12" parent="3" name="article_archive_table_archive_fk">
+        <columns>archive</columns>
+        <ref-key>~.archive_table.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="13" parent="4" name="archive">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <key id="14" parent="4" name="PRIMARY">
+        <columns>archive</columns>
         <primary>1</primary>
       </key>
     </database-model>

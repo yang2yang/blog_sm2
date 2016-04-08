@@ -1,7 +1,9 @@
 package main.java.cn.qingtianr.factory;
 
+import main.java.cn.qingtianr.service.ArchiveService;
 import main.java.cn.qingtianr.service.ArticleService;
 import main.java.cn.qingtianr.service.UserService;
+import main.java.cn.qingtianr.service.impl.ArchiveServiceImpl;
 import main.java.cn.qingtianr.service.impl.ArticleServiceImpl;
 import main.java.cn.qingtianr.service.impl.UserServiceImpl;
 
@@ -17,5 +19,10 @@ public class ServiceFactory {
     public static ArticleService getArticleServiceInstance()
     {
         return new ArticleServiceImpl();
+    }
+
+    public static ArchiveService getArchiveServiceInstance()
+    {
+        return new ArchiveServiceImpl();
     }
 }

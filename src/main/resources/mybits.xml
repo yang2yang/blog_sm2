@@ -4,6 +4,7 @@
     <typeAliases>
         <typeAlias alias="User" type="main.java.cn.qingtianr.model.User"></typeAlias>
         <typeAlias alias="Article" type="main.java.cn.qingtianr.model.Article"></typeAlias>
+        <typeAlias alias="Archive" type="main.java.cn.qingtianr.model.Archive"></typeAlias>
     </typeAliases>
 
     <environments default="development">
@@ -21,6 +22,7 @@
     <mappers>
         <mapper resource="main/java/cn/qingtianr/dao/UserDao.xml"/>
         <mapper resource="main/java/cn/qingtianr/dao/ArticleDao.xml"/>
+        <mapper resource="main/java/cn/qingtianr/dao/Archive.xml"/>
     </mappers>
 
 </configuration>

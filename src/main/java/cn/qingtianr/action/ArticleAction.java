@@ -2,9 +2,11 @@ package main.java.cn.qingtianr.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import main.java.cn.qingtianr.factory.ServiceFactory;
+import main.java.cn.qingtianr.model.Archive;
 import main.java.cn.qingtianr.model.ArchiveCount;
 import main.java.cn.qingtianr.model.Article;
 
+import java.security.Provider;
 import java.util.ArrayList;
 /**
  * Created by jack on 16-3-30.
@@ -36,13 +38,26 @@ public class ArticleAction extends ActionSupport {
 //        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
         System.out.println("hello I'm showArticle");
 //      这里需要从分类的数据库表中取到数据,现在暂时还是模拟
+//      从数据库里面取到了分类的数据后
+        ArrayList<Archive> archivelist = ServiceFactory.getArchiveServiceInstance().getAllArchive();
+        for(int i = 0; i < archivelist.size();i++)
+        {
+            System.out.println("**************");
+            System.out.println(archivelist.get(i).getArchive());
+            System.out.println("**************");
+        }
         archivecountlist = new ArrayList<ArchiveCount>();
-        archivecountlist.add(new ArchiveCount("a",0));
-        archivecountlist.add(new ArchiveCount("b",0));
-        count = ServiceFactory.getArticleServiceInstance().countArticle(archivecountlist.get(0).getArchive());
-        archivecountlist.get(0).setCount(count);
-        count = ServiceFactory.getArticleServiceInstance().countArticle(archivecountlist.get(1).getArchive());
-        archivecountlist.get(1).setCount(count);
+//      将所有list里面的数据都放在archivecountlist中
+
+        for(int i = 0; i < archivelist.size();i++) {
+            archivecountlist.add(new ArchiveCount(archivelist.get(i).getArchive(),0));
+        }
+//      这里将archivecountlist中存储的分类进行统计,需要改成循环的来做
+        for (int i = 0;i < archivecountlist.size();i++)
+        {
+            count = ServiceFactory.getArticleServiceInstance().countArticle(archivecountlist.get(i).getArchive());
+            archivecountlist.get(i).setCount(count);
+        }
         return "lookarticle";
     }
 
