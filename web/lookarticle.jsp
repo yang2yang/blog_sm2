@@ -34,5 +34,10 @@
     <%-- 这里通过Markdown渲染一下--%>
     <%--<md:render text="Markdown _is_ __cool__!"/>--%>
 </s:iterator>
+<p>a:<s:property value="count"/></p>
+----------------------------------------------------<br/>
+<s:iterator value="archivecountlist" var="name">
+    <s:property value="#name.archive" />:<s:property value="#name.count"/>
+</s:iterator>
 </body>
 </html>

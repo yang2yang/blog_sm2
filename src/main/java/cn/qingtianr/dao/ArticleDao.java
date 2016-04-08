@@ -13,4 +13,5 @@ public interface ArticleDao {
     public Article getOneArticle(String title);
     public Boolean updateArticle(Article article);
     public Boolean deleteArticle(String title);
+    public int countArticle(String archive);
 }

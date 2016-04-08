@@ -32,4 +32,11 @@
     <select id="deleteArticle">
         DELETE FROM article WHERE title = #{title}
     </select>
+
+    <!--这个sql语句怎么返回一个正整数呢???现在这样返回的是一个count(*)的行数吧！！？-->
+    <!--这样返回的不是行数？而是我想要的东西??这个mybaits的resultType到底是干什么用的？-->
+     <select id="countArticle" resultType="int">
+         select count(*) from article WHERE archive = #{archive};
+    </select>
+
 </mapper>

@@ -109,4 +109,23 @@ public class ArticleServiceImpl implements ArticleService{
         return true;
 
     }
+
+    @Override
+    public int countArticle(String archive) {
+        int count;
+         try{
+            System.out.println(archive);
+            count = MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).countArticle(archive);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+        finally
+        {
+            MybatisSqlSessionFactory.closeSession();
+        }
+        return count;
+   }
 }
