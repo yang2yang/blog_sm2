@@ -25,7 +25,7 @@
         <data-type>varchar(20)</data-type>
       </column>
       <column id="9" parent="3" name="content">
-        <data-type>varchar(100)</data-type>
+        <data-type>varchar(10000)</data-type>
       </column>
       <index id="10" parent="3" name="article_archive_table_archive_fk">
         <columns>archive</columns>

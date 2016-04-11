@@ -24,17 +24,17 @@
 
         <action name="articleactionshow" class="main.java.cn.qingtianr.action.ArticleAction" method="showArticle">
             <result name="lookarticle">
-                lookarticle.jsp
+                /BootStrapTest/index.jsp
             </result>
         </action>
         <action name="getarticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="getOneArticle">
             <result name="post">
-                post.jsp
+                /BootStrapTest/post.jsp
             </result>
         </action>
         <action name="managearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="manageArticle">
             <result name="managearticle">
-                managearticle.jsp
+                /BootStrapTest/backend.jsp
             </result>
         </action>
         <action name="updatearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateArticle">
