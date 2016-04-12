@@ -61,8 +61,8 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="managearticleaction">看文章(改成主页)<span class="sr-only">(current)</span></a></li>
-            <li><a href="#">看文章</a></li>
+            <li><a href="/BootStrapTest/backend_main.jsp">主页<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="managearticleaction">看文章</a></li>
             <li><a href="/BootStrapTest/backend_write.jsp">写文章</a></li>
             <li><a href="#">Export</a></li>
           </ul>
@@ -80,32 +80,7 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-
-          <h2 class="sub-header">文章列表</h2>
+         <h2 class="sub-header">文章列表</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

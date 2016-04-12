@@ -61,9 +61,9 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="/BootStrapTest/backend_main.jsp">主页<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/BootStrapTest/backend_main.jsp">主页<span class="sr-only">(current)</span></a></li>
             <li><a href="managearticleaction">看文章</a></li>
-            <li class="active"><a href="/bootstraptest/backend_write.jsp">写文章</a></li>
+            <li><a href="/BootStrapTest/backend_write.jsp">写文章</a></li>
             <li><a href="#">Export</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -80,23 +80,42 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">写文章</h1>
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">标题</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入标题">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">类别</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入类别">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">内容</label>
-              <textarea class="form-control" rows="10"></textarea>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+         <h2 class="sub-header">后台管理</h2>
+          <div>
+            <p>A bird is known by its note, and a man by his talk.</p>
 
+            <p>闻其歌知其鸟，听其言知其人。</p>
+
+            <p>A blind man who leans against a wall imagines that it's the boundary of the world.</p>
+
+            <p>坐井观天。</p>
+
+            <p>Absence sharpens love, presence strengthens it.</p>
+
+            <p>相聚爱益切，离别情更深。</p>
+
+            <p>A burnt child dreads the fire.</p>
+
+            <p>一朝被蛇咬，十年怕井绳。</p>
+
+            <p>Accidents will happen.</p>
+
+            <p>天有不测风云。</p>
+
+            <p>A clean hand wants no washing.</p>
+
+            <p>身正不怕影子斜。</p>
+
+            <p>A clear conscience is a soft pillow.</p></p>
+
+            <p>问心无愧，高枕无忧。</p>
+
+            <p>A clear conscience is a sure card.</p>
+
+            <p>光明磊落，胜券在握。</p>
+
+            <p>A clear conscience laughs at false accusations.</p>
+          </div>
         </div>
       </div>
     </div>

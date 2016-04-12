@@ -9,10 +9,10 @@
     <package name="default" namespace="/" extends="struts-default">
         <action name="useraction" class="main.java.cn.qingtianr.action.UserAction">
             <result name="success">
-                backend.jsp
+                /BootStrapTest/backend_main.jsp
             </result>
             <result name="fail">
-                fail.jsp
+                /fail.jsp
             </result>
         </action>
 
@@ -34,7 +34,7 @@
         </action>
         <action name="managearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="manageArticle">
             <result name="managearticle">
-                /BootStrapTest/backend.jsp
+                /BootStrapTest/backend_look.jsp
             </result>
         </action>
         <action name="updatearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateArticle">
