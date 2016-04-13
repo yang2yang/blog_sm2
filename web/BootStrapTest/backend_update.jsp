@@ -62,8 +62,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="/BootStrapTest/backend_main.jsp">主页<span class="sr-only">(current)</span></a></li>
-            <li><a href="managearticleaction">看文章</a></li>
-            <li class="active"><a href="/BootStrapTest/backend_write.jsp">写文章</a></li>
+            <li class="active"><a href="managearticleaction">看文章</a></li>
+            <li><a href="/BootStrapTest/backend_write.jsp">写文章</a></li>
             <li><a href="#">Export</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -80,23 +80,28 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">写文章</h1>
-          <form action="articleaction" method="post">
+          <h1 class="page-header">修改文章</h1>
+          <form action="updateonearticleaction">
             <div class="form-group">
               <label for="exampleInputEmail1">标题</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="请输入标题">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="article.title" placeholder="请输入标题">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">类别</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="archive" placeholder="请输入类别">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="article.archive" placeholder="请输入类别">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">内容</label>
-              <textarea class="form-control" name="content" rows="10"></textarea>
+              <textarea class="form-control" name="article.content" rows="10"></textarea>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Update</button>
           </form>
-
+          <s:form action="updateonearticleaction">
+            <s:textfield  label="标题" name="article.title" />
+            <s:textfield label="类别"  name="article.archive" />
+            <s:textarea label="内容" name="article.content" cols="20" rows="3"/>
+            <s:submit   value="修改"/>
+          </s:form>
         </div>
       </div>
     </div>
@@ -112,5 +117,6 @@
     <script src="js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <s:debug/>
   </body>
 </html>

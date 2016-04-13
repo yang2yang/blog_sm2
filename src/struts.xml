@@ -18,7 +18,7 @@
 
         <action name="articleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="writeArticle">
             <result name="lookarticle">
-                lookarticle.jsp
+                /BootStrapTest/backend_look.jsp
             </result>
         </action>
 
@@ -39,17 +39,18 @@
         </action>
         <action name="updatearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateArticle">
             <result name="updateOneArticle">
-                updateOneArticle.jsp
+                /BootStrapTest/backend_update.jsp
+                <!--/updateOneArticle.jsp-->
             </result>
         </action>
         <action name="updateonearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateOneArticle">
         <result name="success">
-            success.jsp
+            /BootStrapTest/backend_look.jsp
         </result>
         </action>
         <action name="deletearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="deleteArticle">
             <result name="success">
-                success.jsp
+                /BootStrapTest/backend_look.jsp
             </result>
         </action>
     </package>
