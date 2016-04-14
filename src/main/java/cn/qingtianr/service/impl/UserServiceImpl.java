@@ -9,12 +9,15 @@ import main.java.cn.qingtianr.service.UserService;
  * Created by jack on 16-3-29.
  */
 public class UserServiceImpl implements UserService{
+
+    private UserDao userdao;
+
     public User findByUserName(String username) throws Exception
     {
         User user = null;
         try
         {
-            user = MybatisSqlSessionFactory.getSession().getMapper(UserDao.class).findByUserName(username);
+            user = this.userdao.findByUserName(username);
         }
         catch (Exception e)
         {

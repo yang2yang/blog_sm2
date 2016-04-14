@@ -79,6 +79,7 @@ public class ArticleAction extends ActionSupport {
     public String updateOneArticle()
     {
         articlesi.updateArticle(article);
+        articlelist = articlesi.showArticle();
         return "success";
     }
     public String manageArticle()

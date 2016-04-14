@@ -82,26 +82,30 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">修改文章</h1>
           <form action="updateonearticleaction">
+            <%--<div class="form-group">--%>
+              <%--<label for="exampleInputEmail2">标题</label>--%>
+              <%--<s:textfield type="text" class="form-contorl" id="exampleInputEmail2" label="标题" name="article.title" />--%>
+              <%--</div>--%>
             <div class="form-group">
               <label for="exampleInputEmail1">标题</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" name="article.title" placeholder="请输入标题">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="article.title" value="<s:property value="article.title"/>" placeholder="请输入标题">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">类别</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" name="article.archive" placeholder="请输入类别">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="article.archive" value="<s:property value="article.archive"/>" placeholder="请输入类别">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">内容</label>
-              <textarea class="form-control" name="article.content" rows="10"></textarea>
+              <textarea class="form-control" name="article.content" value="<s:property value="article.content"/>" rows="10"></textarea>
             </div>
             <button type="submit" class="btn btn-default">Update</button>
           </form>
-          <s:form action="updateonearticleaction">
-            <s:textfield  label="标题" name="article.title" />
-            <s:textfield label="类别"  name="article.archive" />
-            <s:textarea label="内容" name="article.content" cols="20" rows="3"/>
-            <s:submit   value="修改"/>
-          </s:form>
+          <%--<s:form action="updateonearticleaction">--%>
+            <%--<s:textfield  label="标题" name="article.title" />--%>
+            <%--<s:textfield label="类别"  name="article.archive" />--%>
+            <%--<s:textarea label="内容" name="article.content" cols="20" rows="3"/>--%>
+            <%--<s:submit   value="修改"/>--%>
+          <%--</s:form>--%>
         </div>
       </div>
     </div>
