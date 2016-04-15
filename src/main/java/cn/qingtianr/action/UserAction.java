@@ -1,6 +1,7 @@
 package main.java.cn.qingtianr.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import main.java.cn.qingtianr.dao.UserDao;
 import main.java.cn.qingtianr.factory.ServiceFactory;
 import main.java.cn.qingtianr.model.User;
 import main.java.cn.qingtianr.service.UserService;
@@ -48,10 +49,13 @@ public class UserAction extends ActionSupport {
     }
 
     public UserService getUsersi() {
+        System.out.println("It is in getUsrsi!");
         return usersi;
     }
 
     public void setUsersi(UserService usersi) {
+        System.out.println("It is in setUsrsi!");
         this.usersi = usersi;
     }
+
 }

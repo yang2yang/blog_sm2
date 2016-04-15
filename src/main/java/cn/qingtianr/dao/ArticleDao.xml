@@ -11,7 +11,7 @@
     </select>
 <!--这里需要返回一个数组类型的，但是不知道具体怎么写...-->
     <!--这里使用一个resultMap来返回一个对象数组-->
-    <resultMap id="ArticleResultMap" type="Article">
+    <resultMap id="ArticleResultMap" type="main.java.cn.qingtianr.model.Article">
         <result property="title" column="title"/>
         <result property="archive" column="archive"/>
         <result property="content" column="content"/>
@@ -21,7 +21,7 @@
         SELECT * FROM article
     </select>
 
-    <select id="getOneArticle" parameterType="String" resultType="Article">
+    <select id="getOneArticle" parameterType="String" resultType="main.java.cn.qingtianr.model.Article">
         SELECT * FROM article WHERE title = #{title}
     </select>
 

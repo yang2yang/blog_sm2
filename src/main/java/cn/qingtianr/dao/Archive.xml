@@ -3,7 +3,7 @@
 
 <mapper namespace="main.java.cn.qingtianr.dao.ArchiveDao">
 
-    <select id="getAllArchive"  resultType="Archive">
+    <select id="getAllArchive"  resultType="main.java.cn.qingtianr.model.Archive">
         SELECT * FROM archive_table
     </select>
 </mapper>

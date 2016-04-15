@@ -3,7 +3,7 @@
 
 <mapper namespace="main.java.cn.qingtianr.dao.UserDao">
 
-    <select id="findByUserName" parameterType="int" resultType="User">
+    <select id="findByUserName" parameterType="int" resultType="main.java.cn.qingtianr.model.User">
         SELECT * FROM user WHERE username = #{username}
     </select>
 
