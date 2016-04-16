@@ -16,33 +16,18 @@ public class UserServiceImpl implements UserService{
     public User findByUserName(String username) throws Exception
     {
         User user = null;
-        try
-        {
-            if(userdao == null){
-                System.out.println("11111111111");
-            }
-            user = this.userdao.findByUserName(username);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            throw e;
-        }
-        finally
-        {
-            MybatisSqlSessionFactory.closeSession();
-        }
-        return user;
+        user = this.userdao.findByUserName(username);
+       return user;
     }
 
     public UserDao getUserdao() {
-        System.out.println("It is in getUserdao");
+//        System.out.println("It is in getUserdao");
         return userdao;
     }
 
 
     public void setUserdao(UserDao userdao) {
-        System.out.println("It is in setUserdao");
+//        System.out.println("It is in setUserdao");
         this.userdao = userdao;
     }
 }

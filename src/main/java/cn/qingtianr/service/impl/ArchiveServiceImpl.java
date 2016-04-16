@@ -16,18 +16,7 @@ public class ArchiveServiceImpl implements ArchiveService {
     @Override
     public ArrayList<Archive> getAllArchive() {
         ArrayList<Archive> archivelist = new ArrayList();
-        try{
-            archivelist = archivedao.getAllArchive();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            throw e;
-        }
-        finally
-        {
-            MybatisSqlSessionFactory.closeSession();
-        }
+        archivelist = archivedao.getAllArchive();
         return archivelist;
     }
 
