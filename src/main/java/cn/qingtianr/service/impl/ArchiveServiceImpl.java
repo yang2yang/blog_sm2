@@ -11,11 +11,13 @@ import java.util.ArrayList;
  * Created by jack on 16-4-8.
  */
 public class ArchiveServiceImpl implements ArchiveService {
+    private ArchiveDao archivedao;
+
     @Override
     public ArrayList<Archive> getAllArchive() {
         ArrayList<Archive> archivelist = new ArrayList();
         try{
-            archivelist = MybatisSqlSessionFactory.getSession().getMapper(ArchiveDao.class).getAllArchive();
+            archivelist = archivedao.getAllArchive();
         }
         catch (Exception e)
         {
@@ -27,5 +29,13 @@ public class ArchiveServiceImpl implements ArchiveService {
             MybatisSqlSessionFactory.closeSession();
         }
         return archivelist;
+    }
+
+    public void setArchivedao(ArchiveDao archivedao) {
+        this.archivedao = archivedao;
+    }
+
+    public ArchiveDao getArchivedao() {
+        return archivedao;
     }
 }

@@ -11,10 +11,12 @@ import java.util.ArrayList;
  * Created by jack on 16-3-30.
  */
 public class ArticleServiceImpl implements ArticleService{
+    private ArticleDao articledao;
+
     @Override
     public boolean addArticle(Article article) {
         try{
-            MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).addArticle(article);
+            articledao.addArticle(article);
         }
         catch (Exception e)
         {
@@ -32,7 +34,7 @@ public class ArticleServiceImpl implements ArticleService{
     public ArrayList<Article> showArticle() {
         ArrayList<Article> articlelist = new ArrayList();
          try{
-            articlelist = MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).showArticle();
+            articlelist = articledao.showArticle();
              System.out.println("article[0].title = " + articlelist.get(0).getTitle());
         }
         catch (Exception e)
@@ -52,7 +54,7 @@ public class ArticleServiceImpl implements ArticleService{
         Article article = new Article();
         try{
             System.out.println("It is in getOneArticle!!!");
-            article = MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).getOneArticle(title);
+            article = articledao.getOneArticle(title);
             System.out.println("It is in getOneArtcile hello article.title = " + article.getTitle());
         }
         catch (Exception e)
@@ -73,7 +75,7 @@ public class ArticleServiceImpl implements ArticleService{
             System.out.println(article.getTitle());
             System.out.println(article.getArchive());
             System.out.println(article.getContent());
-            MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).updateArticle(article);
+            articledao.updateArticle(article);
             System.out.println("hello It is in updateArticle");
         }
         catch (Exception e)
@@ -93,7 +95,7 @@ public class ArticleServiceImpl implements ArticleService{
         try{
             System.out.println(title);
             int s = 9;
-            MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).deleteArticle(title);
+            articledao.deleteArticle(title);
             System.out.println("hello It is in deleteArticle");
             System.out.println("s="+s);
         }
@@ -115,7 +117,7 @@ public class ArticleServiceImpl implements ArticleService{
         int count;
          try{
             System.out.println(archive);
-            count = MybatisSqlSessionFactory.getSession().getMapper(ArticleDao.class).countArticle(archive);
+            count = articledao.countArticle(archive);
         }
         catch (Exception e)
         {
@@ -128,4 +130,12 @@ public class ArticleServiceImpl implements ArticleService{
         }
         return count;
    }
+
+    public void setArticledao(ArticleDao articledao) {
+        this.articledao = articledao;
+    }
+
+    public ArticleDao getArticledao() {
+        return articledao;
+    }
 }
