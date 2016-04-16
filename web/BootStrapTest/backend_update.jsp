@@ -18,6 +18,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/BootStrapTest/dashboard.css" rel="stylesheet">
+    <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -27,6 +28,7 @@
     <!--[if lt IE 9]>
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
   </head>
 
@@ -96,7 +98,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">内容</label>
-              <textarea class="form-control" name="article.content" value="<s:property value="article.content"/>" rows="10"></textarea>
+              <textarea class="form-control" name="article.content" data-provide="markdown" value="<s:property value="article.content"/>" rows="10"></textarea>
             </div>
             <button type="submit" class="btn btn-default">Update</button>
           </form>
@@ -121,6 +123,9 @@
     <script src="js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/BootStrapTest/js/bootstrap-markdown.js"></script>
+    <script src="/BootStrapTest/js/to-markdown.js"></script>
+    <script src="/BootStrapTest/js/markdown.js"></script>
     <s:debug/>
   </body>
 </html>
