@@ -20,7 +20,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/BootStrapTest/blog.css" rel="stylesheet">
-
+    <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
@@ -63,7 +63,8 @@
             <%--先暂时不使用分类这个选项--%>
           <%--<s:property value="#name.archive"/><br/>--%>
             <%--内容就是正常的字就可以了，然后点击的时候在跳转到post界面--%>
-          <s:property value="article.content"/><br/>
+          <%--<div data-provide="markdown-editable"><s:property value="article.content"/></div><br/>--%>
+            <div id="preview"> </div>
           <%-- 这里通过Markdown渲染一下--%>
           <%--<md:render text="Markdown _is_ __cool__!"/>--%>
             </div>
@@ -105,7 +106,8 @@
 
 </div><!-- /.container -->
 
-
+    <textarea id="text-input" oninput="this.editor.update()"
+              rows="6" cols="60"><s:property value="article.content"/></textarea>
 <footer class="blog-footer">
       <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
       <p>
@@ -114,12 +116,24 @@
     </footer>
 
 
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-	
+    <script src="/BootStrapTest/js/markdown.js"></script>
+    <script>
+      function Editor(input, preview) {
+        this.update = function () {
+          preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
+      }
+      var $ = function (id) { return document.getElementById(id); };
+      new Editor($("text-input"), $("preview"));
+    </script>
     <!-- <script src="js/bootstrap.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

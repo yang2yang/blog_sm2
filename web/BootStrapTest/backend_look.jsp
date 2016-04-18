@@ -112,8 +112,8 @@
                     <s:param name="title" value="#name.title"></s:param>
                   </s:url>
                   <td><s:property value="#name.title"/></td>
-                  <td><s:a href="%{updateArticleId}">修改</s:a></td>
-                  <td><s:a href="%{deleteArticleId}">删除</s:a><br/></td>
+                  <td><s:a href="%{updateArticleId}"><button type="button" class="btn btn-warning btn-sm">修改</button></s:a></td>
+                  <td><s:a href="%{deleteArticleId}"><button tyep="button" class="btn btn-danger btn-sm">删除</button></s:a><br/></td>
                     </tr>
                 </s:iterator>
               </tbody>
