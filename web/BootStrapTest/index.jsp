@@ -67,7 +67,10 @@
             <%--先暂时不使用分类这个选项--%>
           <%--<s:property value="#name.archive"/><br/>--%>
             <%--内容就是正常的字就可以了，然后点击的时候在跳转到post界面--%>
-          <div><s:property value="#name.content"/></div><br/>
+            <div  name="preview"> </div>
+            <textarea id="text-input" name="myinput" hidden="hidden" oninput="this.editor.update()"
+                      rows="6" cols="60"><s:property value="#name.content"/></textarea>
+          <%--<div><s:property value="#name.content"/></div><br/>--%>
           <%-- 这里通过Markdown渲染一下--%>
           <%--<md:render text="Markdown _is_ __cool__!"/>--%>
             </div>
@@ -132,6 +135,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="/BootStrapTest/js/markdown.js"></script>
+
 	<%--<script src="/BootStrapTest/js/bootstrap-markdown.js"></script>--%>
     <%--<script src="/BootStrapTest/js/to-markdown.js"></script>--%>
     <%--<script src="/BootStrapTest/js/markdown.js"></script>--%>
@@ -139,6 +144,27 @@
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      function Editor() {
+        var input = document.getElementsByName("myinput");
+        var preview = document.getElementsByName("preview");
+        for(var i=0;i < input.length;i++) {
+          console.log("aaa" + input[i].value)
+          if (input[i]) {
+//          input[i].value = input[i].value
+            preview[i].innerHTML = markdown.toHTML(input[i].value);
+//          document.getElementsByName("preview")[i].innerHTML = markdown.toHTML(document.getElementsByName("myinput").value);
+          }
+        }
+//        else
+//        {
+//          console.log("123");
+//        }
+      }
+      var $ = function (name) { return document.getElementsByName(name); };
 
+//      new Editor($("myinput"), $("preview"));
+      new Editor();
+    </script>
   </body>
 </html>

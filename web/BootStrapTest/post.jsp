@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/BootStrapTest/favicon.ico">
 
     <title>Blog Template for Bootstrap</title>
 
@@ -106,7 +106,7 @@
 
 </div><!-- /.container -->
 
-    <textarea id="text-input" oninput="this.editor.update()"
+    <textarea id="text-input" hidden="hidden" oninput="this.editor.update()"
               rows="6" cols="60"><s:property value="article.content"/></textarea>
 <footer class="blog-footer">
       <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>

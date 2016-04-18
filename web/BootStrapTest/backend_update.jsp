@@ -98,7 +98,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">内容</label>
-              <textarea class="form-control" name="article.content" data-provide="markdown" value="<s:property value="article.content"/>" rows="10"></textarea>
+              <textarea id="textareacontent" class="form-control" name="article.content" data-provide="markdown"  rows="10"><s:property value="article.content"/></textarea>
             </div>
             <button type="submit" class="btn btn-default">Update</button>
           </form>
@@ -121,6 +121,10 @@
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="js/vendor/holder.min.js"></script>
+    <%--<script>--%>
+      <%--var $ = function (id) { return document.getElementById(id); };--%>
+      <%--$(textareacontent).innerHTML = hello<s:property value="article.content"/>--%>
+    <%--</script> --%>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="/BootStrapTest/js/bootstrap-markdown.js"></script>
