@@ -9,6 +9,8 @@ import main.java.cn.qingtianr.service.ArchiveService;
 import main.java.cn.qingtianr.service.ArticleService;
 
 import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by jack on 16-3-30.
  */
@@ -16,13 +18,15 @@ public class ArticleAction extends ActionSupport {
     private String title;
     private String archive;
     private String content;
-    private ArrayList<Article> articlelist;
+    private List articlelist;
     private String test;
     private Article article;
     private int count;
     private ArrayList<ArchiveCount> archivecountlist;
     private ArticleService articlesi;
     private ArchiveService archivesi;
+    private int page;
+    private int[] numberlist;
 
 //  调用写文章的函数，写完之后，返回一个articlelist的列表
     public String writeArticle()
@@ -37,18 +41,40 @@ public class ArticleAction extends ActionSupport {
 //  调用显示的文章的函数,并将结果显示出来。
     public String showArticle()
     {
-        articlelist = articlesi.showArticle();
+        ArrayList<Article> articlelist_copy = new ArrayList();
+        System.out.println("page="+page);
+        if(page == 0){
+            page = 1;
+        }
+        articlelist_copy = articlesi.showArticle();
+        //设置每一页的文章数量
+        int pagesize = 2;
+        int firstarticle = (page - 1) * pagesize;
+        int lastarticle = page * pagesize - 1;
+        if(lastarticle > articlelist_copy.size()){
+            lastarticle = articlelist_copy.size();
+        }
+
+        System.out.println(articlelist_copy.size()/pagesize);
+        numberlist = new int[articlelist_copy.size()/pagesize];
+        for(int i=0;i < articlelist_copy.size()/pagesize;i++) {
+            numberlist[i] = i+1;
+            System.out.println(i+"="+numberlist[i]);
+        }
+        //列表每一次编辑的时候都需要强制转化一个类型
+        System.out.println(firstarticle+" "+lastarticle);
+        articlelist = articlelist_copy.subList(firstarticle,lastarticle+1);
 //        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
         System.out.println("hello I'm showArticle");
 //      这里需要从分类的数据库表中取到数据,现在暂时还是模拟
 //      从数据库里面取到了分类的数据后
         ArrayList<Archive> archivelist = archivesi.getAllArchive();
-        for(int i = 0; i < archivelist.size();i++)
-        {
-            System.out.println("**************");
-            System.out.println(archivelist.get(i).getArchive());
-            System.out.println("**************");
-        }
+//        for(int i = 0; i < archivelist.size();i++)
+//        {
+//            System.out.println("**************");
+//            System.out.println(archivelist.get(i).getArchive());
+//            System.out.println("**************");
+//        }
         archivecountlist = new ArrayList<ArchiveCount>();
 //      将所有list里面的数据都放在archivecountlist中
 
@@ -131,7 +157,7 @@ public class ArticleAction extends ActionSupport {
     {
        this.articlelist = arraylist;
     }
-    public ArrayList<Article> getArticlelist()
+    public List getArticlelist()
     {
        return articlelist;
     }
@@ -167,5 +193,20 @@ public class ArticleAction extends ActionSupport {
 
     public void setArchivesi(ArchiveService archivesi) {
         this.archivesi = archivesi;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+    public int getPage(){
+        return page;
+    }
+
+    public int[] getNumberlist() {
+        return numberlist;
+    }
+
+    public void setNumberlist(int[] numberlist) {
+        this.numberlist = numberlist;
     }
 }

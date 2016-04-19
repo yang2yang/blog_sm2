@@ -75,13 +75,39 @@
           <%--<md:render text="Markdown _is_ __cool__!"/>--%>
             </div>
         </s:iterator>
-
           <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <s:iterator value="numberlist" id="number">
+                <li><a href="articleactionshow?page=<s:property value='#number'/>"><s:property value='#number'/></a></li>
+              </s:iterator>
+
+              <%--<c:forEach var="i" begin="1" end="5">--%>
+                <%--Item <c:out value="${i}"/><p>--%>
+                <%--<li><a href="articleactionshow?page=${i}">${i}</a></li>--%>
+              <%--</c:forEach>--%>
+              <%--<li><a href="articleactionshow?page=1">1</a></li>--%>
+              <%--<li><a href="articleactionshow?page=2">2</a></li>--%>
+              <%--<li><a href="#">3</a></li>--%>
+              <%--<li><a href="#">4</a></li>--%>
+              <%--<li><a href="#">5</a></li>--%>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
             </ul>
           </nav>
+          <%--<nav>--%>
+            <%--<ul class="pager">--%>
+              <%--<li><a href="#">Previous</a></li>--%>
+              <%--<li><a href="#">Next</a></li>--%>
+            <%--</ul>--%>
+          <%--</nav>--%>
           </div>
 
 
@@ -166,5 +192,6 @@
 //      new Editor($("myinput"), $("preview"));
       new Editor();
     </script>
+
   </body>
 </html>
