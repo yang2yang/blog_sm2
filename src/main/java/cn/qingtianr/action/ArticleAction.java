@@ -50,20 +50,22 @@ public class ArticleAction extends ActionSupport {
         //设置每一页的文章数量
         int pagesize = 2;
         int firstarticle = (page - 1) * pagesize;
-        int lastarticle = page * pagesize - 1;
+        int lastarticle = page * pagesize;
         if(lastarticle > articlelist_copy.size()){
             lastarticle = articlelist_copy.size();
         }
 
-        System.out.println(articlelist_copy.size()/pagesize);
-        numberlist = new int[articlelist_copy.size()/pagesize];
-        for(int i=0;i < articlelist_copy.size()/pagesize;i++) {
+        double pagedou = Math.ceil((double)articlelist_copy.size()/pagesize);
+        int pages = (int)pagedou;
+        System.out.println(pages);
+        numberlist = new int[pages];
+        for(int i=0;i < pages;i++) {
             numberlist[i] = i+1;
             System.out.println(i+"="+numberlist[i]);
         }
         //列表每一次编辑的时候都需要强制转化一个类型
         System.out.println(firstarticle+" "+lastarticle);
-        articlelist = articlelist_copy.subList(firstarticle,lastarticle+1);
+        articlelist = articlelist_copy.subList(firstarticle,lastarticle);
 //        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
         System.out.println("hello I'm showArticle");
 //      这里需要从分类的数据库表中取到数据,现在暂时还是模拟
