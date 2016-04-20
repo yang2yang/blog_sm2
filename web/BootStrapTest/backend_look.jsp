@@ -104,7 +104,6 @@
                   <tr>
                   <%--通过这个url来传递http的参数--%>
                   <td>#</td>
-                    <td>#</td>
                   <s:url action="updatearticleaction" namespace="/" id="updateArticleId">
                     <s:param name="title" value="#name.title"></s:param>
                   </s:url>
@@ -112,6 +111,7 @@
                     <s:param name="title" value="#name.title"></s:param>
                   </s:url>
                   <td><s:property value="#name.title"/></td>
+                  <td><s:property value="#name.datetime"/></td>
                   <td><s:a href="%{updateArticleId}"><button type="button" class="btn btn-warning btn-sm">修改</button></s:a></td>
                   <td><s:a href="%{deleteArticleId}"><button tyep="button" class="btn btn-danger btn-sm">删除</button></s:a><br/></td>
                     </tr>

@@ -22,7 +22,7 @@ public class ArticleServiceImpl implements ArticleService{
     public ArrayList<Article> showArticle() {
        ArrayList<Article> articlelist = new ArrayList();
        articlelist = articledao.showArticle();
-       System.out.println("article[0].title = " + articlelist.get(0).getTitle());
+       System.out.println("article[0].title = " + articlelist.get(0).getDatetime());
        return articlelist;
     }
 

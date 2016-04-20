@@ -25,27 +25,30 @@
         <data-type>varchar(20)</data-type>
       </column>
       <column id="9" parent="3" name="content">
-        <data-type>varchar(10000)</data-type>
+        <data-type>text</data-type>
       </column>
-      <index id="10" parent="3" name="article_archive_table_archive_fk">
+      <column id="10" parent="3" name="datetime">
+        <data-type>date</data-type>
+      </column>
+      <index id="11" parent="3" name="article_archive_table_archive_fk">
         <columns>archive</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="11" parent="3" name="PRIMARY">
+      <key id="12" parent="3" name="PRIMARY">
         <columns>title</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="12" parent="3" name="article_archive_table_archive_fk">
+      <foreign-key id="13" parent="3" name="article_archive_table_archive_fk">
         <columns>archive</columns>
         <ref-key>~.archive_table.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="13" parent="4" name="archive">
+      <column id="14" parent="4" name="archive">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <key id="14" parent="4" name="PRIMARY">
+      <key id="15" parent="4" name="PRIMARY">
         <columns>archive</columns>
         <primary>1</primary>
       </key>

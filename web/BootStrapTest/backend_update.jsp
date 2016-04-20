@@ -19,6 +19,7 @@
     <!-- Custom styles for this template -->
     <link href="/BootStrapTest/dashboard.css" rel="stylesheet">
     <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="/BootStrapTest/css/datetimepicker.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -96,6 +97,10 @@
               <label for="exampleInputPassword1">类别</label>
               <input type="text" class="form-control" id="exampleInputPassword1" name="article.archive" value="<s:property value="article.archive"/>" placeholder="请输入类别">
             </div>
+              <div class="form-group">
+                <label for="datetimepicker">日期</label>
+                <input type="text" class="form-control" id="datetimepicker"  name="datetime" value="<s:property value="article.datetime"/>">
+              </div>
             <div class="form-group">
               <label for="exampleInputPassword1">内容</label>
               <textarea id="textareacontent" class="form-control" name="article.content" data-provide="markdown"  rows="10"><s:property value="article.content"/></textarea>
@@ -121,6 +126,10 @@
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="js/vendor/holder.min.js"></script>
+    <script src="/BootStrapTest/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+      $('#datetimepicker').datetimepicker({format: 'yyyy-mm-dd',minView: "month",autoclose:true});
+    </script>
     <%--<script>--%>
       <%--var $ = function (id) { return document.getElementById(id); };--%>
       <%--$(textareacontent).innerHTML = hello<s:property value="article.content"/>--%>

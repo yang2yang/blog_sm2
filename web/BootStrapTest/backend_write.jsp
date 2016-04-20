@@ -19,6 +19,7 @@
     <!-- Custom styles for this template -->
     <link href="/BootStrapTest/dashboard.css" rel="stylesheet">
     <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="/BootStrapTest/css/datetimepicker.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- <script src="js/ie-emulation-modes-warning.js"></script> -->
@@ -89,7 +90,11 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">类别</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="archive" placeholder="请输入类别">
+              <input type="text" class="form-control" id="exampleInputPassword1" name="archive" placeholder="请输入类别">
+            </div>
+            <div class="form-group">
+              <label for="datetimepicker">日期</label>
+              <input type="text" class="form-control" id="datetimepicker"  name="datetime" placeholder="请输入日期">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">内容</label>
@@ -110,7 +115,11 @@
     <!-- <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.min.js"></script>
+    <script src="js/holder.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+      $('#datetimepicker').datetimepicker({format: 'yyyy-mm-dd',minView: "month",autoclose:true});
+    </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="/BootStrapTest/js/bootstrap-markdown.js"></script>

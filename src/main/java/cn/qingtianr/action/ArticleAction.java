@@ -9,6 +9,7 @@ import main.java.cn.qingtianr.service.ArchiveService;
 import main.java.cn.qingtianr.service.ArticleService;
 
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -18,7 +19,8 @@ public class ArticleAction extends ActionSupport {
     private String title;
     private String archive;
     private String content;
-    private List articlelist;
+    private Date datetime;
+    private List<Article> articlelist;
     private String test;
     private Article article;
     private int count;
@@ -32,7 +34,7 @@ public class ArticleAction extends ActionSupport {
     public String writeArticle()
     {
         // todo
-        Article article = new Article(title,archive,content);
+        Article article = new Article(title,archive,content,datetime);
         articlesi.addArticle(article);
         articlelist = articlesi.showArticle();
         return "lookarticle";
@@ -113,6 +115,7 @@ public class ArticleAction extends ActionSupport {
     public String manageArticle()
     {
         articlelist = articlesi.showArticle();
+        System.out.println("article[1].title = " + articlelist.get(0).getDatetime());
         System.out.println("It is in managearticle!!");
         return "managearticle";
     }
@@ -210,5 +213,13 @@ public class ArticleAction extends ActionSupport {
 
     public void setNumberlist(int[] numberlist) {
         this.numberlist = numberlist;
+    }
+
+    public Date getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(Date datetime) {
+        this.datetime = datetime;
     }
 }
