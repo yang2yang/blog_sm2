@@ -7,6 +7,21 @@
 <struts>
     <constant name="struts.devMode" value="true"/>
     <package name="default" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor name="checklogin" class="main.java.cn.qingtianr.interceptor.checklogin"/>
+            <interceptor-stack name="myDefaultStack">
+                <interceptor-ref name="checklogin"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="myDefaultStack"/>
+
+        <global-results>
+            <result name="login">/BootStrapTest/login.jsp</result>
+        </global-results>
+
+        <!--配置文件中好像也可以使用spring的依赖注入功能-->
         <action name="useraction" class="main.java.cn.qingtianr.action.UserAction">
             <result name="success">
                 /BootStrapTest/backend_main.jsp
