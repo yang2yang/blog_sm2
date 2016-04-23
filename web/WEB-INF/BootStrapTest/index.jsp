@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/BootStrapTest/favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>Blog Template for Bootstrap</title>
 
@@ -19,8 +19,8 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="/BootStrapTest/blog.css" rel="stylesheet">
-    <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="blog.css" rel="stylesheet">
+    <link href="css/bootstrap-markdown.min.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
@@ -161,11 +161,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="/BootStrapTest/js/markdown.js"></script>
+    <script src="js/markdown.js"></script>
 
-	<%--<script src="/BootStrapTest/js/bootstrap-markdown.js"></script>--%>
-    <%--<script src="/BootStrapTest/js/to-markdown.js"></script>--%>
-    <%--<script src="/BootStrapTest/js/markdown.js"></script>--%>
+	<%--<script src="js/bootstrap-markdown.js"></script>--%>
+    <%--<script src="js/to-markdown.js"></script>--%>
+    <%--<script src="js/markdown.js"></script>--%>
     <!-- <script src="js/bootstrap.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

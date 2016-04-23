@@ -18,6 +18,8 @@
 
     <!-- Custom styles for this template -->
     <link href="/BootStrapTest/dashboard.css" rel="stylesheet">
+    <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="/BootStrapTest/css/datetimepicker.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -27,6 +29,7 @@
     <!--[if lt IE 9]>
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
   </head>
 
@@ -61,9 +64,9 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="/BootStrapTest/backend_main.jsp">主页<span class="sr-only">(current)</span></a></li>
+            <li><a href="backend_main">主页<span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="managearticleaction">看文章</a></li>
-            <li><a href="/BootStrapTest/backend_write.jsp">写文章</a></li>
+            <li><a href="backend_write">写文章</a></li>
             <li><a href="#">Export</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -80,45 +83,36 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-         <h2 class="sub-header">文章列表</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-                <s:iterator value="articlelist" var="name">
-                  <tr>
-                  <%--通过这个url来传递http的参数--%>
-                  <td>#</td>
-                  <s:url action="updatearticleaction" namespace="/" id="updateArticleId">
-                    <s:param name="title" value="#name.title"></s:param>
-                  </s:url>
-                  <s:url action="deletearticleaction" namespace="/" id="deleteArticleId">
-                    <s:param name="title" value="#name.title"></s:param>
-                  </s:url>
-                  <td><s:property value="#name.title"/></td>
-                  <td><s:property value="#name.datetime"/></td>
-                  <td><s:a href="%{updateArticleId}"><button type="button" class="btn btn-warning btn-sm">修改</button></s:a></td>
-                  <td><s:a href="%{deleteArticleId}"><button tyep="button" class="btn btn-danger btn-sm">删除</button></s:a><br/></td>
-                    </tr>
-                </s:iterator>
-              </tbody>
-            </table>
-          </div><!-- table-responsive -->
+          <h1 class="page-header">修改文章</h1>
+          <form action="updateonearticleaction">
+            <%--<div class="form-group">--%>
+              <%--<label for="exampleInputEmail2">标题</label>--%>
+              <%--<s:textfield type="text" class="form-contorl" id="exampleInputEmail2" label="标题" name="article.title" />--%>
+              <%--</div>--%>
+            <div class="form-group">
+              <label for="exampleInputEmail1">标题</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="article.title" value="<s:property value="article.title"/>" placeholder="请输入标题">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">类别</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="article.archive" value="<s:property value="article.archive"/>" placeholder="请输入类别">
+            </div>
+              <div class="form-group">
+                <label for="datetimepicker">日期</label>
+                <input type="text" class="form-control" id="datetimepicker"  name="datetime" value="<s:property value="article.datetime"/>">
+              </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">内容</label>
+              <textarea id="textareacontent" class="form-control" name="article.content" data-provide="markdown"  rows="10"><s:property value="article.content"/></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Update</button>
+          </form>
+          <%--<s:form action="updateonearticleaction">--%>
+            <%--<s:textfield  label="标题" name="article.title" />--%>
+            <%--<s:textfield label="类别"  name="article.archive" />--%>
+            <%--<s:textarea label="内容" name="article.content" cols="20" rows="3"/>--%>
+            <%--<s:submit   value="修改"/>--%>
+          <%--</s:form>--%>
         </div>
       </div>
     </div>
@@ -132,7 +126,19 @@
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="js/vendor/holder.min.js"></script>
+    <script src="/BootStrapTest/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+      $('#datetimepicker').datetimepicker({format: 'yyyy-mm-dd',minView: "month",autoclose:true});
+    </script>
+    <%--<script>--%>
+      <%--var $ = function (id) { return document.getElementById(id); };--%>
+      <%--$(textareacontent).innerHTML = hello<s:property value="article.content"/>--%>
+    <%--</script> --%>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/BootStrapTest/js/bootstrap-markdown.js"></script>
+    <script src="/BootStrapTest/js/to-markdown.js"></script>
+    <script src="/BootStrapTest/js/markdown.js"></script>
+    <s:debug/>
   </body>
 </html>

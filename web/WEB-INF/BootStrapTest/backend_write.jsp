@@ -18,15 +18,17 @@
 
     <!-- Custom styles for this template -->
     <link href="/BootStrapTest/dashboard.css" rel="stylesheet">
-
+    <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="/BootStrapTest/css/datetimepicker.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- <script src="js/ie-emulation-modes-warning.js"></script> -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
   </head>
 
@@ -61,9 +63,9 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="/BootStrapTest/backend_main.jsp">主页<span class="sr-only">(current)</span></a></li>
+            <li><a href="backend_main">主页<span class="sr-only">(current)</span></a></li>
             <li><a href="managearticleaction">看文章</a></li>
-            <li><a href="/BootStrapTest/backend_write.jsp">写文章</a></li>
+            <li class="active"><a href="backend_write">写文章</a></li>
             <li><a href="#">Export</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -80,42 +82,27 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-         <h2 class="sub-header">后台管理</h2>
-          <div>
-            <p>A bird is known by its note, and a man by his talk.</p>
+          <h1 class="page-header">写文章</h1>
+          <form action="articleaction" method="post">
+            <div class="form-group">
+              <label for="exampleInputEmail1">标题</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="请输入标题">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">类别</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="archive" placeholder="请输入类别">
+            </div>
+            <div class="form-group">
+              <label for="datetimepicker">日期</label>
+              <input type="text" class="form-control" id="datetimepicker"  name="datetime" placeholder="请输入日期">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">内容</label>
+              <textarea class="form-control" name="content" data-provide="markdown" rows="10"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
 
-            <p>闻其歌知其鸟，听其言知其人。</p>
-
-            <p>A blind man who leans against a wall imagines that it's the boundary of the world.</p>
-
-            <p>坐井观天。</p>
-
-            <p>Absence sharpens love, presence strengthens it.</p>
-
-            <p>相聚爱益切，离别情更深。</p>
-
-            <p>A burnt child dreads the fire.</p>
-
-            <p>一朝被蛇咬，十年怕井绳。</p>
-
-            <p>Accidents will happen.</p>
-
-            <p>天有不测风云。</p>
-
-            <p>A clean hand wants no washing.</p>
-
-            <p>身正不怕影子斜。</p>
-
-            <p>A clear conscience is a soft pillow.</p></p>
-
-            <p>问心无愧，高枕无忧。</p>
-
-            <p>A clear conscience is a sure card.</p>
-
-            <p>光明磊落，胜券在握。</p>
-
-            <p>A clear conscience laughs at false accusations.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -128,8 +115,15 @@
     <!-- <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.min.js"></script>
+    <script src="js/holder.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+      $('#datetimepicker').datetimepicker({format: 'yyyy-mm-dd',minView: "month",autoclose:true});
+    </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/BootStrapTest/js/bootstrap-markdown.js"></script>
+    <script src="/BootStrapTest/js/to-markdown.js"></script>
+    <script src="/BootStrapTest/js/markdown.js"></script>
   </body>
 </html>
