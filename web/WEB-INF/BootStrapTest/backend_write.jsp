@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/BootStrapTest/favicon.ico">
+    <link rel="icon" href="/image/favicon.ico">
 
     <title>Dashboard Template for Bootstrap</title>
 
@@ -17,9 +17,9 @@
 	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/BootStrapTest/dashboard.css" rel="stylesheet">
-    <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
-    <link href="/BootStrapTest/css/datetimepicker.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="/css/datetimepicker.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- <script src="js/ie-emulation-modes-warning.js"></script> -->
@@ -64,7 +64,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="backend_main">主页<span class="sr-only">(current)</span></a></li>
-            <li><a href="managearticleaction">看文章</a></li>
+            <li><a href="manageaction">看文章</a></li>
             <li class="active"><a href="backend_write">写文章</a></li>
             <li><a href="#">Export</a></li>
           </ul>
@@ -115,15 +115,15 @@
     <!-- <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/holder.min.js"></script>
-    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/js/holder.min.js"></script>
+    <script src="/js/bootstrap-datetimepicker.min.js"></script>
     <script>
       $('#datetimepicker').datetimepicker({format: 'yyyy-mm-dd',minView: "month",autoclose:true});
     </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="/BootStrapTest/js/bootstrap-markdown.js"></script>
-    <script src="/BootStrapTest/js/to-markdown.js"></script>
-    <script src="/BootStrapTest/js/markdown.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/bootstrap-markdown.js"></script>
+    <script src="/js/to-markdown.js"></script>
+    <script src="/js/markdown.js"></script>
   </body>
 </html>

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/BootStrapTest/favicon.ico">
+    <link rel="icon" href="/image/favicon.ico">
 
     <title>Dashboard Template for Bootstrap</title>
 
@@ -17,9 +17,9 @@
 	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/BootStrapTest/dashboard.css" rel="stylesheet">
-    <link href="/BootStrapTest/css/bootstrap-markdown.min.css" rel="stylesheet">
-    <link href="/BootStrapTest/css/datetimepicker.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="/css/datetimepicker.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -65,7 +65,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="backend_main">主页<span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="managearticleaction">看文章</a></li>
+            <li class="active"><a href="manageaction">看文章</a></li>
             <li><a href="backend_write">写文章</a></li>
             <li><a href="#">Export</a></li>
           </ul>
@@ -84,7 +84,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">修改文章</h1>
-          <form action="updateonearticleaction">
+          <form action="updateOneaction">
             <%--<div class="form-group">--%>
               <%--<label for="exampleInputEmail2">标题</label>--%>
               <%--<s:textfield type="text" class="form-contorl" id="exampleInputEmail2" label="标题" name="article.title" />--%>
@@ -125,8 +125,8 @@
     <!-- <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.min.js"></script>
-    <script src="/BootStrapTest/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/js/vendor/holder.min.js"></script>
+    <script src="/js/bootstrap-datetimepicker.min.js"></script>
     <script>
       $('#datetimepicker').datetimepicker({format: 'yyyy-mm-dd',minView: "month",autoclose:true});
     </script>
@@ -135,10 +135,10 @@
       <%--$(textareacontent).innerHTML = hello<s:property value="article.content"/>--%>
     <%--</script> --%>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script src="/BootStrapTest/js/bootstrap-markdown.js"></script>
-    <script src="/BootStrapTest/js/to-markdown.js"></script>
-    <script src="/BootStrapTest/js/markdown.js"></script>
-    <s:debug/>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/bootstrap-markdown.js"></script>
+    <script src="/js/to-markdown.js"></script>
+    <script src="/js/markdown.js"></script>
+    <%--<s:debug/>--%>
   </body>
 </html>

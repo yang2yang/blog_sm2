@@ -21,6 +21,31 @@
             <result name="login">/WEB-INF/BootStrapTest/login.jsp</result>
         </global-results>
 
+        <action name="showaction" class="main.java.cn.qingtianr.action.ArticleAction" method="showArticle">
+            <result name="sayarticle">
+                /WEB-INF/BootStrapTest/index.jsp
+            </result>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="*action" class="main.java.cn.qingtianr.action.ArticleAction" method="{1}Article">
+            <result name="lookarticle">
+                /WEB-INF/BootStrapTest/backend_look.jsp
+            </result>
+            <result name="post">
+                /WEB-INF/BootStrapTest/post.jsp
+            </result>
+            <result name="managearticle">
+                /WEB-INF/BootStrapTest/backend_look.jsp
+            </result>
+            <result name="updateOneArticle">
+                /WEB-INF/BootStrapTest/backend_update.jsp
+            </result>
+            <result name="success">
+                /WEB-INF/BootStrapTest/backend_look.jsp
+            </result>
+        </action>
+
         <!--配置文件中好像也可以使用spring的依赖注入功能-->
         <action name="useraction" class="main.java.cn.qingtianr.action.UserAction">
             <result name="success">
@@ -31,44 +56,7 @@
             </result>
         </action>
 
-        <action name="articleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="writeArticle">
-            <result name="lookarticle">
-                /WEB-INF/BootStrapTest/backend_look.jsp
-            </result>
-        </action>
-
-        <action name="articleactionshow" class="main.java.cn.qingtianr.action.ArticleAction" method="showArticle">
-            <result name="lookarticle">
-                /WEB-INF/BootStrapTest/index.jsp
-            </result>
-        </action>
-        <action name="getarticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="getOneArticle">
-            <result name="post">
-                /WEB-INF/BootStrapTest/post.jsp
-            </result>
-        </action>
-        <action name="managearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="manageArticle">
-            <result name="managearticle">
-                /WEB-INF/BootStrapTest/backend_look.jsp
-            </result>
-        </action>
-        <action name="updatearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateArticle">
-            <result name="updateOneArticle">
-                /WEB-INF/BootStrapTest/backend_update.jsp
-                <!--/updateOneArticle.jsp-->
-            </result>
-        </action>
-        <action name="updateonearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="updateOneArticle">
-        <result name="success">
-            /WEB-INF/BootStrapTest/backend_look.jsp
-        </result>
-        </action>
-        <action name="deletearticleaction" class="main.java.cn.qingtianr.action.ArticleAction" method="deleteArticle">
-            <result name="success">
-                /WEB-INF/BootStrapTest/backend_look.jsp
-            </result>
-        </action>
-        <!-- 将下面这个action作为超链接使用 -->
+       <!-- 将下面这个action作为超链接使用 -->
         <action name="*">
             <result>/WEB-INF/BootStrapTest/{1}.jsp</result>
         </action>

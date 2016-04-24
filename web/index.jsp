@@ -9,6 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<s:action name="articleactionshow" namespace="/" executeResult="true"/>
+<s:action name="showaction" namespace="/" executeResult="true"/>
 </body>
 </html>

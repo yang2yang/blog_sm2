@@ -91,7 +91,7 @@ public class ArticleAction extends ActionSupport {
             count = articlesi.countArticle(archivecountlist.get(i).getArchive());
             archivecountlist.get(i).setCount(count);
         }
-        return "lookarticle";
+        return "sayarticle";
     }
 
     public String getOneArticle()

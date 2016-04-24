@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="../../image/favicon.ico">
 
     <title>Blog Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="////css/bootstrap.min.css" rel="stylesheet"> -->
 	
-	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/////css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
-    <link href="css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="../../css/blog.css" rel="stylesheet">
+    <link href="/css/bootstrap-markdown.min.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
@@ -41,7 +41,7 @@
           <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item" href="login">back</a>
         </nav>
       </div>
     </div>
@@ -58,7 +58,7 @@
         <div class="col-sm-8 blog-main">
         <s:iterator value="articlelist" var="name">
           <%--通过这个url来传递http的参数--%>
-          <s:url action="getarticleaction" namespace="/" id="getArticleId">
+          <s:url action="getOneaction" namespace="/" id="getArticleId">
             <s:param name="title" value="#name.title"></s:param>
           </s:url>
           <div class="blog-post">
@@ -83,7 +83,7 @@
                 </a>
               </li>
               <s:iterator value="numberlist" id="number">
-                <li><a href="articleactionshow?page=<s:property value='#number'/>"><s:property value='#number'/></a></li>
+                <li><a href="showaction?page=<s:property value='#number'/>"><s:property value='#number'/></a></li>
               </s:iterator>
 
               <%--<c:forEach var="i" begin="1" end="5">--%>
@@ -161,15 +161,15 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="js/markdown.js"></script>
+    <script src="/js/markdown.js"></script>
 
-	<%--<script src="js/bootstrap-markdown.js"></script>--%>
-    <%--<script src="js/to-markdown.js"></script>--%>
-    <%--<script src="js/markdown.js"></script>--%>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
+	<%--<script src="/js/bootstrap-markdown.js"></script>--%>
+    <%--<script src="/js/to-markdown.js"></script>--%>
+    <%--<script src="/js/markdown.js"></script>--%>
+    <!-- <script src="/js/bootstrap.min.js"></script> -->
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
     <script>
       function Editor() {
         var input = document.getElementsByName("myinput");
