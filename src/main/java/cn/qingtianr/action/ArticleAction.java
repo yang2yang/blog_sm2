@@ -1,7 +1,6 @@
 package main.java.cn.qingtianr.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import main.java.cn.qingtianr.factory.ServiceFactory;
 import main.java.cn.qingtianr.model.Archive;
 import main.java.cn.qingtianr.model.ArchiveCount;
 import main.java.cn.qingtianr.model.Article;
