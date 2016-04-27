@@ -21,6 +21,13 @@
             <result name="login">/WEB-INF/BootStrapTest/login.jsp</result>
         </global-results>
 
+        <action name="getOneaction" class="main.java.cn.qingtianr.action.ArticleAction" method="getOneArticle">
+            <result name="post">
+                /WEB-INF/BootStrapTest/post.jsp
+            </result>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+
         <action name="showaction" class="main.java.cn.qingtianr.action.ArticleAction" method="showArticle">
             <result name="sayarticle">
                 /WEB-INF/BootStrapTest/index.jsp
@@ -31,9 +38,6 @@
         <action name="*action" class="main.java.cn.qingtianr.action.ArticleAction" method="{1}Article">
             <result name="lookarticle">
                 /WEB-INF/BootStrapTest/backend_look.jsp
-            </result>
-            <result name="post">
-                /WEB-INF/BootStrapTest/post.jsp
             </result>
             <result name="managearticle">
                 /WEB-INF/BootStrapTest/backend_look.jsp
