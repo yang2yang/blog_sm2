@@ -43,6 +43,8 @@ public class ArticleAction extends ActionSupport {
     public String showArticle()
     {
         ArrayList<Article> articlelist_copy = new ArrayList();
+//      在这里对数组通过时间进行排列
+//        DateSort(articlelist_copy);
         System.out.println("page="+page);
         if(page == 0){
             page = 1;
@@ -69,7 +71,6 @@ public class ArticleAction extends ActionSupport {
         articlelist = articlelist_copy.subList(firstarticle,lastarticle);
 //        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
         System.out.println("hello I'm showArticle");
-//      这里需要从分类的数据库表中取到数据,现在暂时还是模拟
 //      从数据库里面取到了分类的数据后
         ArrayList<Archive> archivelist = archivesi.getAllArchive();
 //        for(int i = 0; i < archivelist.size();i++)
@@ -92,6 +93,10 @@ public class ArticleAction extends ActionSupport {
         }
         return "sayarticle";
     }
+
+    private void DateSort(ArrayList<Article> articlelist_copy) {
+
+}
 
     public String getOneArticle()
     {

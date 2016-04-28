@@ -18,7 +18,7 @@
     </resultMap>
 
     <select id="showArticle" resultMap="ArticleResultMap">
-        SELECT * FROM article
+        SELECT * FROM article ORDER BY datetime
     </select>
 
     <select id="getOneArticle" parameterType="String" resultType="main.java.cn.qingtianr.model.Article">
