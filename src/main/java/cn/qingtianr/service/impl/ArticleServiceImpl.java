@@ -2,6 +2,7 @@ package main.java.cn.qingtianr.service.impl;
 
 import main.java.cn.qingtianr.dao.ArticleDao;
 import main.java.cn.qingtianr.model.Article;
+import main.java.cn.qingtianr.model.ArticleCount;
 import main.java.cn.qingtianr.service.ArticleService;
 
 import java.util.ArrayList;
@@ -64,6 +65,12 @@ public class ArticleServiceImpl implements ArticleService{
 
         return count;
    }
+
+    @Override
+    public ArrayList<ArticleCount> countDatetime() {
+        ArrayList<ArticleCount> articlecount = articledao.countDatetime();
+        return articlecount;
+    }
 
     public void setArticledao(ArticleDao articledao) {
         this.articledao = articledao;

@@ -1,6 +1,7 @@
 package main.java.cn.qingtianr.dao;
 
 import main.java.cn.qingtianr.model.Article;
+import main.java.cn.qingtianr.model.ArticleCount;
 
 import java.util.ArrayList;
 
@@ -14,4 +15,5 @@ public interface ArticleDao {
     public Boolean updateArticle(Article article);
     public Boolean deleteArticle(String title);
     public int countArticle(String archive);
+    public ArrayList<ArticleCount> countDatetime();
 }

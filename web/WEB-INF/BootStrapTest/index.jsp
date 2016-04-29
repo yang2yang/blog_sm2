@@ -63,7 +63,7 @@
           </s:url>
           <div class="blog-post">
             <h2 class="blog-post-title"><s:a href="%{getArticleId}"><s:property value="#name.title"/></s:a></h2>
-            <p class="blog-post-meta">December 14, 2016 by <a href="#">yang2yang</a></p>
+            <p class="blog-post-meta"><s:property value="#name.datetime"/> created by <a href="#">yang2yang</a></p>
             <%--先暂时不使用分类这个选项--%>
           <%--<s:property value="#name.archive"/><br/>--%>
             <%--内容就是正常的字就可以了，然后点击的时候在跳转到post界面--%>
@@ -119,18 +119,10 @@
           <div class="sidebar-module">
             <h4>Archives</h4>
             <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
+              <s:iterator value="articlecount" var="name">
+                <li><a href="#"><s:property value="#name.datetime"/></a><span> (<s:property value="#name.count"></s:property>)</span></li>
+              </s:iterator>
+
             </ol>
           </div>
           <div class="sidebar-module">

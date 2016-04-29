@@ -1,6 +1,7 @@
 package main.java.cn.qingtianr.service;
 
 import main.java.cn.qingtianr.model.Article;
+import main.java.cn.qingtianr.model.ArticleCount;
 
 import java.util.ArrayList;
 
@@ -20,4 +21,6 @@ public interface ArticleService{
     public boolean deleteArticle(String title);
 //  通过类别返回这个文章中的数量
     public int countArticle(String archive);
+
+    public ArrayList<ArticleCount> countDatetime();
 }

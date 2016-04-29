@@ -18,7 +18,7 @@
     </resultMap>
 
     <select id="showArticle" resultMap="ArticleResultMap">
-        SELECT * FROM article ORDER BY datetime
+        SELECT * FROM article ORDER BY datetime DESC
     </select>
 
     <select id="getOneArticle" parameterType="String" resultType="main.java.cn.qingtianr.model.Article">
@@ -39,4 +39,12 @@
          select count(*) from article WHERE archive = #{archive};
     </select>
 
+     <resultMap id="DatetimeResultMap" type="main.java.cn.qingtianr.model.ArticleCount">
+        <result property="datetime" column="datetime"/>
+        <result property="count" column="count(datetime)"/>
+    </resultMap>
+
+    <select id="countDatetime" resultMap="DatetimeResultMap">
+        SELECT datetime,count(datetime) from article group by datetime;
+    </select>
 </mapper>

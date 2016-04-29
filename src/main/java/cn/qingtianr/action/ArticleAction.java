@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import main.java.cn.qingtianr.model.Archive;
 import main.java.cn.qingtianr.model.ArchiveCount;
 import main.java.cn.qingtianr.model.Article;
+import main.java.cn.qingtianr.model.ArticleCount;
 import main.java.cn.qingtianr.service.ArchiveService;
 import main.java.cn.qingtianr.service.ArticleService;
 
@@ -28,6 +29,7 @@ public class ArticleAction extends ActionSupport {
     private ArchiveService archivesi;
     private int page;
     private int[] numberlist;
+    private List<ArticleCount> articlecount;
 
 //  调用写文章的函数，写完之后，返回一个articlelist的列表
     public String writeArticle()
@@ -43,13 +45,27 @@ public class ArticleAction extends ActionSupport {
     public String showArticle()
     {
         ArrayList<Article> articlelist_copy = new ArrayList();
-//      在这里对数组通过时间进行排列
-//        DateSort(articlelist_copy);
         System.out.println("page="+page);
         if(page == 0){
             page = 1;
         }
         articlelist_copy = articlesi.showArticle();
+//      将articlelist_copy复制后，然后去重，计算数量，将这两个信息放在一个二维数组中
+        articlecount = new ArrayList<ArticleCount>();
+        articlecount = articlesi.countDatetime();
+        for(int i = 0;i < articlecount.size();i++){
+            System.out.println(articlecount.get(i).getDatetime());
+            System.out.println(articlecount.get(i).getCount());
+        }
+//        for(int i = 0;i < articlelist_copy.size() - 1;i++){
+//            if(articlelist_copy.get(i).getDatetime() == articlelist_copy.get(i+1).getDatetime()){
+//
+//            }
+//        }
+
+
+
+
         //设置每一页的文章数量
         int pagesize = 2;
         int firstarticle = (page - 1) * pagesize;
@@ -72,25 +88,25 @@ public class ArticleAction extends ActionSupport {
 //        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
         System.out.println("hello I'm showArticle");
 //      从数据库里面取到了分类的数据后
-        ArrayList<Archive> archivelist = archivesi.getAllArchive();
+//        ArrayList<Archive> archivelist = archivesi.getAllArchive();
 //        for(int i = 0; i < archivelist.size();i++)
 //        {
 //            System.out.println("**************");
 //            System.out.println(archivelist.get(i).getArchive());
 //            System.out.println("**************");
 //        }
-        archivecountlist = new ArrayList<ArchiveCount>();
+//        archivecountlist = new ArrayList<ArchiveCount>();
 //      将所有list里面的数据都放在archivecountlist中
 
-        for(int i = 0; i < archivelist.size();i++) {
-            archivecountlist.add(new ArchiveCount(archivelist.get(i).getArchive(),0));
-        }
+//        for(int i = 0; i < archivelist.size();i++) {
+//            archivecountlist.add(new ArchiveCount(archivelist.get(i).getArchive(),0));
+//        }
 //      这里将archivecountlist中存储的分类进行统计,需要改成循环的来做
-        for (int i = 0;i < archivecountlist.size();i++)
-        {
-            count = articlesi.countArticle(archivecountlist.get(i).getArchive());
-            archivecountlist.get(i).setCount(count);
-        }
+//        for (int i = 0;i < archivecountlist.size();i++)
+//        {
+//            count = articlesi.countArticle(archivecountlist.get(i).getArchive());
+//            archivecountlist.get(i).setCount(count);
+//        }
         return "sayarticle";
     }
 
@@ -225,5 +241,13 @@ public class ArticleAction extends ActionSupport {
 
     public void setDatetime(Date datetime) {
         this.datetime = datetime;
+    }
+
+    public List<ArticleCount> getArticlecount() {
+        return articlecount;
+    }
+
+    public void setArticlecount(List<ArticleCount> articlecount) {
+        this.articlecount = articlecount;
     }
 }
