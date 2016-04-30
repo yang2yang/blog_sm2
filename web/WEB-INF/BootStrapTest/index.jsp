@@ -120,7 +120,7 @@
             <h4>Archives</h4>
             <ol class="list-unstyled">
               <s:iterator value="articlecount" var="name">
-                <li><a href="#"><s:property value="#name.datetime"/></a><span> (<s:property value="#name.count"></s:property>)</span></li>
+                <li><a href="showdatetimeaction?<s:property value="#name.datetime"/>"><s:property value="#name.datetime"/></a><span> (<s:property value="#name.count"></s:property>)</span></li>
               </s:iterator>
 
             </ol>

@@ -3,6 +3,7 @@ package main.java.cn.qingtianr.service;
 import main.java.cn.qingtianr.model.Article;
 import main.java.cn.qingtianr.model.ArticleCount;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -23,4 +24,6 @@ public interface ArticleService{
     public int countArticle(String archive);
 
     public ArrayList<ArticleCount> countDatetime();
+
+    public ArrayList<Article> showDatetimeArticle(Date datetime);
 }

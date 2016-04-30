@@ -35,6 +35,13 @@
             <interceptor-ref name="defaultStack"/>
         </action>
 
+        <action name="showdatetimeaction" class="main.java.cn.qingtianr.action.ArticleAction" method="showDatetimeArticle">
+            <result name="sayarticle">
+                /WEB-INF/BootStrapTest/index.jsp
+            </result>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+
         <action name="*action" class="main.java.cn.qingtianr.action.ArticleAction" method="{1}Article">
             <result name="lookarticle">
                 /WEB-INF/BootStrapTest/backend_look.jsp

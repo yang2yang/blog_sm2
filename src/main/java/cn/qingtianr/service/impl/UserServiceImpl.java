@@ -1,10 +1,8 @@
 package main.java.cn.qingtianr.service.impl;
 
 import main.java.cn.qingtianr.dao.UserDao;
-import main.java.cn.qingtianr.dbc.MybatisSqlSessionFactory;
 import main.java.cn.qingtianr.model.User;
 import main.java.cn.qingtianr.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by jack on 16-3-29.

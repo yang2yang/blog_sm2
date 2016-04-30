@@ -5,6 +5,7 @@ import main.java.cn.qingtianr.model.Article;
 import main.java.cn.qingtianr.model.ArticleCount;
 import main.java.cn.qingtianr.service.ArticleService;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -70,6 +71,13 @@ public class ArticleServiceImpl implements ArticleService{
     public ArrayList<ArticleCount> countDatetime() {
         ArrayList<ArticleCount> articlecount = articledao.countDatetime();
         return articlecount;
+    }
+
+    @Override
+    public ArrayList<Article> showDatetimeArticle(Date datetime) {
+        ArrayList<Article> articlelist = new ArrayList();
+        articlelist = articledao.showDatetimeArticle(datetime);
+        return articlelist;
     }
 
     public void setArticledao(ArticleDao articledao) {

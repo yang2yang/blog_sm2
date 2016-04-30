@@ -3,6 +3,7 @@ package main.java.cn.qingtianr.dao;
 import main.java.cn.qingtianr.model.Article;
 import main.java.cn.qingtianr.model.ArticleCount;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -16,4 +17,5 @@ public interface ArticleDao {
     public Boolean deleteArticle(String title);
     public int countArticle(String archive);
     public ArrayList<ArticleCount> countDatetime();
+    public ArrayList<Article> showDatetimeArticle(Date datetime);
 }

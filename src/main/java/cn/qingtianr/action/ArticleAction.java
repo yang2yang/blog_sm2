@@ -50,21 +50,18 @@ public class ArticleAction extends ActionSupport {
             page = 1;
         }
         articlelist_copy = articlesi.showArticle();
-//      将articlelist_copy复制后，然后去重，计算数量，将这两个信息放在一个二维数组中
+//      调用articlesi中的函数来将数据取出来
         articlecount = new ArrayList<ArticleCount>();
         articlecount = articlesi.countDatetime();
-        for(int i = 0;i < articlecount.size();i++){
-            System.out.println(articlecount.get(i).getDatetime());
-            System.out.println(articlecount.get(i).getCount());
-        }
+//        for(int i = 0;i < articlecount.size();i++){
+//            System.out.println(articlecount.get(i).getDatetime());
+//            System.out.println(articlecount.get(i).getCount());
+//        }
 //        for(int i = 0;i < articlelist_copy.size() - 1;i++){
 //            if(articlelist_copy.get(i).getDatetime() == articlelist_copy.get(i+1).getDatetime()){
 //
 //            }
 //        }
-
-
-
 
         //设置每一页的文章数量
         int pagesize = 2;
@@ -110,9 +107,6 @@ public class ArticleAction extends ActionSupport {
         return "sayarticle";
     }
 
-    private void DateSort(ArrayList<Article> articlelist_copy) {
-
-}
 
     public String getOneArticle()
     {
@@ -145,6 +139,12 @@ public class ArticleAction extends ActionSupport {
         articlesi.deleteArticle(title);
         articlelist = articlesi.showArticle();
         return "success";
+    }
+
+    public String showDatetimeArticle(){
+        articlelist = articlesi.showDatetimeArticle(datetime);
+        articlecount = articlesi.countDatetime();
+        return "sayarticle";
     }
 
     public String getTitle() {
