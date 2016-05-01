@@ -8,6 +8,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+    <link rel="icon" href="/image/favicon.ico">
+</head>
 <body>
 <s:action name="showaction" namespace="/" executeResult="true"/>
 </body>

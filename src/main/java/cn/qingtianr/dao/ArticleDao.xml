@@ -40,15 +40,16 @@
     </select>
 
      <resultMap id="DatetimeResultMap" type="main.java.cn.qingtianr.model.ArticleCount">
-        <result property="datetime" column="datetime"/>
-        <result property="count" column="count(datetime)"/>
+        <result property="datetime" column="datetimeform"/>
+        <result property="count" column="count"/>
     </resultMap>
 
     <select id="countDatetime" resultMap="DatetimeResultMap">
-        SELECT datetime,count(datetime) from article group by datetime;
+        SELECT DATE_FORMAT(datetime,'%Y-%m') AS datetimeform,count(DATE_FORMAT(datetime,'%Y-%m')) AS count from article group by DATE_FORMAT(datetime,'%Y-%m');
     </select>
 
-    <select id="showdatetimearticle" resultMap="ArticleResultMap">
-        SELECT * from article WHERE datetime= #{datetime} ORDER BY datetime
+    <!--通过这个sql语句可以选择出来同样年份和月份的时间-->
+    <select id="showDatetimeArticle" resultMap="ArticleResultMap">
+        SELECT * from article WHERE YEAR(datetime)=YEAR(#{datetime}) AND MONTH(datetime)=MONTH(#{datetime}) ORDER BY datetime
     </select>
 </mapper>

@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../image/favicon.ico">
+    <link rel="icon" href="/image/favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>咦~你来了咩~</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="////css/bootstrap.min.css" rel="stylesheet"> -->
@@ -37,7 +37,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item active" href="showaction">Home</a>
           <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
@@ -120,7 +120,7 @@
             <h4>Archives</h4>
             <ol class="list-unstyled">
               <s:iterator value="articlecount" var="name">
-                <li><a href="showdatetimeaction?<s:property value="#name.datetime"/>"><s:property value="#name.datetime"/></a><span> (<s:property value="#name.count"></s:property>)</span></li>
+                <li><a href="showdatetimeaction?datetime=<s:property value="#name.datetime"/>-01"><s:property value="#name.datetime"/></a><span> (<s:property value="#name.count"></s:property>)</span></li>
               </s:iterator>
 
             </ol>

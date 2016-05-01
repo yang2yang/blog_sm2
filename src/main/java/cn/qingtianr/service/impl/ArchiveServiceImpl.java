@@ -1,7 +1,6 @@
 package main.java.cn.qingtianr.service.impl;
 
 import main.java.cn.qingtianr.dao.ArchiveDao;
-import main.java.cn.qingtianr.dbc.MybatisSqlSessionFactory;
 import main.java.cn.qingtianr.model.Archive;
 import main.java.cn.qingtianr.service.ArchiveService;
 
@@ -15,8 +14,7 @@ public class ArchiveServiceImpl implements ArchiveService {
 
     @Override
     public ArrayList<Archive> getAllArchive() {
-        ArrayList<Archive> archivelist = new ArrayList();
-        archivelist = archivedao.getAllArchive();
+        ArrayList<Archive> archivelist = archivelist = archivedao.getAllArchive();
         return archivelist;
     }
 

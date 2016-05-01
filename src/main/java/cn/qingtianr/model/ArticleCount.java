@@ -1,28 +1,27 @@
 package main.java.cn.qingtianr.model;
 
-import java.sql.Date;
 
 /**
  * Created by jack on 16-4-29.
  */
 public class ArticleCount {
-    private Date datetime;
+    private String datetime;
     private int count;
 
     public ArticleCount(){
 
     }
-    public ArticleCount(Date datetime,int count){
+    public ArticleCount(String datetime,int count){
         this.datetime = datetime;
         this.count = count;
     }
 
 
-    public Date getDatetime() {
+    public String getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Date datetime) {
+    public void setDatetime(String datetime) {
         this.datetime = datetime;
     }
 

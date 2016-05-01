@@ -144,6 +144,7 @@ public class ArticleAction extends ActionSupport {
     public String showDatetimeArticle(){
         articlelist = articlesi.showDatetimeArticle(datetime);
         articlecount = articlesi.countDatetime();
+//        暂时不弄分页
         return "sayarticle";
     }
 

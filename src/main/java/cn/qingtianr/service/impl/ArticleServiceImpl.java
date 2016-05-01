@@ -70,6 +70,7 @@ public class ArticleServiceImpl implements ArticleService{
     @Override
     public ArrayList<ArticleCount> countDatetime() {
         ArrayList<ArticleCount> articlecount = articledao.countDatetime();
+        System.out.println("Impl-countDatetime:"+articlecount.get(0).getDatetime());
         return articlecount;
     }
 
