@@ -68,6 +68,21 @@
           <%-- 这里通过Markdown渲染一下--%>
           <%--<md:render text="Markdown _is_ __cool__!"/>--%>
             </div>
+          <%--这里显示已有的评论内容--%>
+
+          <%--这里下面添加评论的东西--%>
+          <form>
+            <p>添加评论:</p>
+            <div class="form-group">
+              <label for="exampleInputEmail1">称呼:</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入你的称呼">
+            </div>
+            <div class="form-group">
+              <%--@declare id="exampleinputpassword1"--%><label for="exampleInputPassword1">内容</label>
+              <textarea class="form-control" name="comment" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">提交评论</button>
+          </form>
           </div>
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">

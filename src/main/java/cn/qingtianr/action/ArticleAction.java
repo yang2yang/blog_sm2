@@ -1,10 +1,7 @@
 package main.java.cn.qingtianr.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import main.java.cn.qingtianr.model.Archive;
-import main.java.cn.qingtianr.model.ArchiveCount;
-import main.java.cn.qingtianr.model.Article;
-import main.java.cn.qingtianr.model.ArticleCount;
+import main.java.cn.qingtianr.model.*;
 import main.java.cn.qingtianr.service.ArchiveService;
 import main.java.cn.qingtianr.service.ArticleService;
 
@@ -30,6 +27,7 @@ public class ArticleAction extends ActionSupport {
     private int page;
     private int[] numberlist;
     private List<ArticleCount> articlecount;
+    private ArrayList<Comment> commentlist;
 
 //  调用写文章的函数，写完之后，返回一个articlelist的列表
     public String writeArticle()
@@ -250,5 +248,13 @@ public class ArticleAction extends ActionSupport {
 
     public void setArticlecount(List<ArticleCount> articlecount) {
         this.articlecount = articlecount;
+    }
+
+    public ArrayList<Comment> getCommentlist() {
+        return commentlist;
+    }
+
+    public void setCommentlist(ArrayList<Comment> commentlist) {
+        this.commentlist = commentlist;
     }
 }

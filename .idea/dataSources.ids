@@ -11,45 +11,64 @@
       <table id="2" parent="1" name="user"/>
       <table id="3" parent="1" name="article"/>
       <table id="4" parent="1" name="archive_table"/>
-      <column id="5" parent="2" name="username">
+      <table id="5" parent="1" name="comment"/>
+      <column id="6" parent="2" name="username">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="6" parent="2" name="password">
+      <column id="7" parent="2" name="password">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="7" parent="3" name="title">
+      <column id="8" parent="3" name="title">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="8" parent="3" name="archive">
+      <column id="9" parent="3" name="archive">
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="9" parent="3" name="content">
+      <column id="10" parent="3" name="content">
         <data-type>text</data-type>
       </column>
-      <column id="10" parent="3" name="datetime">
+      <column id="11" parent="3" name="datetime">
         <data-type>date</data-type>
       </column>
-      <index id="11" parent="3" name="article_archive_table_archive_fk">
+      <column id="12" parent="3" name="id">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="13" parent="3" name="article_archive_table_archive_fk">
         <columns>archive</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="12" parent="3" name="PRIMARY">
-        <columns>title</columns>
-        <primary>1</primary>
-      </key>
-      <foreign-key id="13" parent="3" name="article_archive_table_archive_fk">
+      <foreign-key id="14" parent="3" name="article_archive_table_archive_fk">
         <columns>archive</columns>
         <ref-key>~.archive_table.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="14" parent="4" name="archive">
+      <column id="15" parent="4" name="archive">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <key id="15" parent="4" name="PRIMARY">
+      <key id="16" parent="4" name="PRIMARY">
         <columns>archive</columns>
+        <primary>1</primary>
+      </key>
+      <column id="17" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="18" parent="5" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="19" parent="5" name="comment">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="20" parent="5" name="post">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="21" parent="5" name="PRIMARY">
+        <columns>id</columns>
         <primary>1</primary>
       </key>
     </database-model>
