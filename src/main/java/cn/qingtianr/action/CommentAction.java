@@ -2,20 +2,24 @@ package main.java.cn.qingtianr.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import main.java.cn.qingtianr.model.Comment;
+import main.java.cn.qingtianr.service.CommentService;
 
 /**
  * Created by jack on 16-5-2.
  */
 public class CommentAction extends ActionSupport{
     private Comment comment;
+    private CommentService commentsi;
 //  添加评论功能
     public String addComment(){
-
+        commentsi.addComment(comment);
+//      返回原始页面
+        return "success";
     }
 
 //  后台显示评论功能
     public String showComment() {
-
+        return "yes";
     }
 //  前端页面显示评论,其实这个功能是由showArticle这个action调用的
 
@@ -39,5 +43,13 @@ public class CommentAction extends ActionSupport{
 
     public void setComment(Comment comment) {
         this.comment = comment;
+    }
+
+    public CommentService getCommentsi() {
+        return commentsi;
+    }
+
+    public void setCommentsi(CommentService commentsi) {
+        this.commentsi = commentsi;
     }
 }

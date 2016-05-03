@@ -71,15 +71,17 @@
           <%--这里显示已有的评论内容--%>
 
           <%--这里下面添加评论的东西--%>
-          <form>
+          <form action="addCommentaction" method="post">
             <p>添加评论:</p>
+             <%--这个隐藏的input将文章的主键传递过去--%>
+           <input type="hidden" name="comment.post" value="<s:property value="article.id"/>">
             <div class="form-group">
               <label for="exampleInputEmail1">称呼:</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入你的称呼">
+              <input type="text" class="form-control"  name="comment.name" id="exampleInputEmail1" placeholder="请输入你的称呼">
             </div>
             <div class="form-group">
               <%--@declare id="exampleinputpassword1"--%><label for="exampleInputPassword1">内容</label>
-              <textarea class="form-control" name="comment" rows="5"></textarea>
+              <textarea class="form-control" name="comment.comment" rows="5"></textarea>
             </div>
             <button type="submit" class="btn btn-default">提交评论</button>
           </form>

@@ -12,14 +12,19 @@
 
     <bean id="archivesi" class="main.java.cn.qingtianr.service.impl.ArchiveServiceImpl">
         <property name="archivedao" ref="archivedao"/>
-            </bean>
+    </bean>
+
     <bean id="articlesi" class="main.java.cn.qingtianr.service.impl.ArticleServiceImpl">
         <property name="articledao" ref="articledao"/>
-            </bean>
+    </bean>
+
     <bean id="usersi" class="main.java.cn.qingtianr.service.impl.UserServiceImpl">
         <property name="userdao" ref = "userdao"/>
     </bean>
 
+    <bean id="commentsi" class="main.java.cn.qingtianr.service.impl.CommentServiceImpl">
+        <property name="commentdao" ref = "commentdao"/>
+    </bean>
     <!--<aop:aspectj-autoproxy proxy-target-class="true" />-->
     <!-- 自动扫描 -->
     <!--<context:component-scan base-package="main.java.cn.qingtianr" />-->
@@ -70,6 +75,13 @@
         <property name="mapperInterface" value="main.java.cn.qingtianr.dao.ArchiveDao" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
+
+    <bean id="commentdao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="main.java.cn.qingtianr.dao.CommentDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
+
     <!--<bean id="usersi" class="main.java.cn.qingtianr.service.impl.UserServiceImpl">-->
         <!--<property name="userdao" ref = "userdao"/>-->
     <!--</bean >-->

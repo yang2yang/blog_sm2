@@ -6,6 +6,7 @@ import java.sql.Date;
  * Created by jack on 16-3-30.
  */
 public class Article {
+    private int id;
     private String title;
     private String archive;
     private Date datetime;
@@ -52,5 +53,13 @@ public class Article {
 
     public void setDatetime(Date datetime) {
         this.datetime = datetime;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -30,10 +30,9 @@ public class ArticleServiceImpl implements ArticleService{
 
     @Override
     public Article getOneArticle(String title) {
-        Article article = new Article();
         System.out.println("It is in getOneArticle!!!");
-        article = articledao.getOneArticle(title);
-        System.out.println("It is in getOneArtcile hello article.title = " + article.getTitle());
+        Article article = article = articledao.getOneArticle(title);
+        System.out.println("It is in getOneArtcile hello article.title = " + article.getId());
         return article;
     }
 

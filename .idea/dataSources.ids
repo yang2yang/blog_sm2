@@ -32,45 +32,60 @@
         <data-type>date</data-type>
       </column>
       <column id="12" parent="3" name="id">
+        <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
       <index id="13" parent="3" name="article_archive_table_archive_fk">
         <columns>archive</columns>
         <desc-columns></desc-columns>
       </index>
-      <foreign-key id="14" parent="3" name="article_archive_table_archive_fk">
+      <key id="14" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="15" parent="3" name="article_archive_table_archive_fk">
         <columns>archive</columns>
         <ref-key>~.archive_table.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="15" parent="4" name="archive">
+      <column id="16" parent="4" name="archive">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <key id="16" parent="4" name="PRIMARY">
+      <key id="17" parent="4" name="PRIMARY">
         <columns>archive</columns>
         <primary>1</primary>
       </key>
-      <column id="17" parent="5" name="id">
+      <column id="18" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="18" parent="5" name="name">
+      <column id="19" parent="5" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="19" parent="5" name="comment">
+      <column id="20" parent="5" name="comment">
         <mandatory>1</mandatory>
-        <data-type>varchar(20)</data-type>
+        <data-type>text</data-type>
       </column>
-      <column id="20" parent="5" name="post">
+      <column id="21" parent="5" name="post">
         <data-type>int(11)</data-type>
       </column>
-      <key id="21" parent="5" name="PRIMARY">
+      <index id="22" parent="5" name="comment_article_id_fk">
+        <columns>post</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="23" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
+      <foreign-key id="24" parent="5" name="comment_article_id_fk">
+        <columns>post</columns>
+        <ref-key>~.article.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
     </database-model>
   </data-source>
 </component>

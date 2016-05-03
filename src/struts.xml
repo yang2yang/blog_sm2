@@ -21,6 +21,13 @@
             <result name="login">/WEB-INF/BootStrapTest/login.jsp</result>
         </global-results>
 
+        <action name="addCommentaction" class="main.java.cn.qingtianr.action.CommentAction" method="addComment">
+            <result name="success">
+                /index.jsp
+            </result>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+
         <action name="getOneaction" class="main.java.cn.qingtianr.action.ArticleAction" method="getOneArticle">
             <result name="post">
                 /WEB-INF/BootStrapTest/post.jsp
