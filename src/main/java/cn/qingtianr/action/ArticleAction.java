@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import main.java.cn.qingtianr.model.*;
 import main.java.cn.qingtianr.service.ArchiveService;
 import main.java.cn.qingtianr.service.ArticleService;
+import main.java.cn.qingtianr.service.CommentService;
 
 import java.util.ArrayList;
 import java.sql.Date;
@@ -27,6 +28,7 @@ public class ArticleAction extends ActionSupport {
     private int page;
     private int[] numberlist;
     private List<ArticleCount> articlecount;
+    private CommentService commentsi;
     private ArrayList<Comment> commentlist;
 
 //  调用写文章的函数，写完之后，返回一个articlelist的列表
@@ -42,6 +44,7 @@ public class ArticleAction extends ActionSupport {
 //  调用显示的文章的函数,并将结果显示出来。
     public String showArticle()
     {
+
         ArrayList<Article> articlelist_copy = new ArrayList();
         System.out.println("page="+page);
         if(page == 0){
@@ -109,6 +112,7 @@ public class ArticleAction extends ActionSupport {
     public String getOneArticle()
     {
         article = articlesi.getOneArticle(title);
+        commentlist = commentsi.showPostComment(article);
         return "post";
     }
 
@@ -256,5 +260,13 @@ public class ArticleAction extends ActionSupport {
 
     public void setCommentlist(ArrayList<Comment> commentlist) {
         this.commentlist = commentlist;
+    }
+
+    public CommentService getCommentsi() {
+        return commentsi;
+    }
+
+    public void setCommentsi(CommentService commentsi) {
+        this.commentsi = commentsi;
     }
 }

@@ -1,6 +1,9 @@
 package main.java.cn.qingtianr.dao;
 
+import main.java.cn.qingtianr.model.Article;
 import main.java.cn.qingtianr.model.Comment;
+
+import java.util.ArrayList;
 
 /**
  * Created by jack on 16-5-3.
@@ -13,7 +16,7 @@ public interface CommentDao {
     public String showComment();
 
     //  前端页面显示评论
-    public String showPostComment();
+    public ArrayList<Comment> showPostComment(Article article);
 
     //  前端自己删除自己的评论功能？
     public String delPostComment();

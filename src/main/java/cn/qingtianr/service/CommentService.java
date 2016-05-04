@@ -1,6 +1,9 @@
 package main.java.cn.qingtianr.service;
 
+import main.java.cn.qingtianr.model.Article;
 import main.java.cn.qingtianr.model.Comment;
+
+import java.util.ArrayList;
 
 /**
  * Created by jack on 16-5-2.
@@ -10,10 +13,12 @@ public interface CommentService {
     public String addComment(Comment comment);
 
     //  后台显示评论功能
-    public String showComment();
+    public ArrayList<Comment> showComment();
 
     //  前端页面显示评论
-    public String showPostComment();
+    public ArrayList<Comment> showPostComment(Article article);
+
+    //  前端页面显示功能
 
     //  前端自己删除自己的评论功能？
     public String delPostComment();

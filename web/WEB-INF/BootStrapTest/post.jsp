@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/image/favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Welcome to my blog</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
@@ -37,7 +37,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item active" href="showaction">Home</a>
           <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
@@ -69,7 +69,13 @@
           <%--<md:render text="Markdown _is_ __cool__!"/>--%>
             </div>
           <%--这里显示已有的评论内容--%>
-
+          <h4>以下是所有的评论：</h4>
+          <s:iterator value="commentlist" id="name">
+            <div style="border: solid">
+            <p><s:property value="#name.name"/></p>
+            <p><s:property value="#name.comment"/></p>
+            </div>
+          </s:iterator>
           <%--这里下面添加评论的东西--%>
           <form action="addCommentaction" method="post">
             <p>添加评论:</p>

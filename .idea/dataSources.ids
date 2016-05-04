@@ -72,15 +72,18 @@
       <column id="21" parent="5" name="post">
         <data-type>int(11)</data-type>
       </column>
-      <index id="22" parent="5" name="comment_article_id_fk">
+      <column id="22" parent="5" name="datetime">
+        <data-type>date</data-type>
+      </column>
+      <index id="23" parent="5" name="comment_article_id_fk">
         <columns>post</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="23" parent="5" name="PRIMARY">
+      <key id="24" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="24" parent="5" name="comment_article_id_fk">
+      <foreign-key id="25" parent="5" name="comment_article_id_fk">
         <columns>post</columns>
         <ref-key>~.article.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>

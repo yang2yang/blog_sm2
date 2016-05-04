@@ -8,6 +8,18 @@
         INSERT INTO comment(post,name,comment) VALUES (#{post},#{name},#{comment})
     </insert>
 
+    <resultMap id="CommentResultMap" type="main.java.cn.qingtianr.model.Comment">
+        <result property="id" column="id"/>
+        <result property="post" column="post"/>
+        <result property="name" column="name"/>
+        <result property="comment" column="comment"/>
+    </resultMap>
+
+    <!--将所有和article的id一样的评论筛选出来-->
+    <select id="showPostComment" resultMap="CommentResultMap">
+        SELECT * FROM comment WHERE #{id} = post
+    </select>
+
     <!--<insert id="addComment">-->
     <!--INSERT INTO comment(id,post,name,comment) VALUES (1,#{post},#{name},#{comment})-->
     <!--</insert>-->
