@@ -20,6 +20,16 @@
         <global-results>
             <result name="login">/WEB-INF/BootStrapTest/login.jsp</result>
         </global-results>
+        <action name="delCommentAction" class="main.java.cn.qingtianr.action.CommentAction" method="delComment">
+            <result name="success">
+                /WEB-INF/BootStrapTest/backend_comment_look.jsp
+            </result>
+        </action>
+        <action name="showCommentAction" class="main.java.cn.qingtianr.action.CommentAction" method="showComment">
+            <result name="success">
+                /WEB-INF/BootStrapTest/backend_comment_look.jsp
+            </result>
+        </action>
 
         <action name="addCommentaction" class="main.java.cn.qingtianr.action.CommentAction" method="addComment">
             <result name="success">
@@ -70,7 +80,7 @@
                 /WEB-INF/BootStrapTest/backend_main.jsp
             </result>
             <result name="fail">
-                /fail.jsp
+                /WEB-INF/BootStrapTest/login.jsp
             </result>
         </action>
 

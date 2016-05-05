@@ -4,12 +4,16 @@ import com.opensymphony.xwork2.ActionSupport;
 import main.java.cn.qingtianr.model.Comment;
 import main.java.cn.qingtianr.service.CommentService;
 
+import java.util.ArrayList;
+
 /**
  * Created by jack on 16-5-2.
  */
 public class CommentAction extends ActionSupport{
-    private Comment comment;
-    private CommentService commentsi;
+    private int id;
+    private Comment comment;             //评论对象
+    private CommentService commentsi;    //评论逻辑组件
+    private ArrayList<Comment> commentlist; //返回的评论列表
 //  添加评论功能
     public String addComment(){
         commentsi.addComment(comment);
@@ -19,7 +23,8 @@ public class CommentAction extends ActionSupport{
 
 //  后台显示评论功能
     public String showComment() {
-        return "yes";
+        commentlist = commentsi.showComment();
+        return "success";
     }
 //  前端页面显示评论,其实这个功能是由showArticle这个action调用的
 
@@ -29,7 +34,10 @@ public class CommentAction extends ActionSupport{
     }
 //  后端删除评论功能
     public String delComment(){
-        return null;
+//        System.out.println(comment.getName());
+        commentsi.delComment(comment);
+        commentsi.showComment();
+        return "success";
     }
 //  后台修改评论功能
 //  好像不需要这个功能
@@ -51,5 +59,21 @@ public class CommentAction extends ActionSupport{
 
     public void setCommentsi(CommentService commentsi) {
         this.commentsi = commentsi;
+    }
+
+    public ArrayList<Comment> getCommentlist() {
+        return commentlist;
+    }
+
+    public void setCommentlist(ArrayList<Comment> commentlist) {
+        this.commentlist = commentlist;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

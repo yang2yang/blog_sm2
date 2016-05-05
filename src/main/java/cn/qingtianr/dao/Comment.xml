@@ -20,6 +20,16 @@
         SELECT * FROM comment WHERE #{id} = post
     </select>
 
+    <!--将所有的评论筛选出来-->
+    <select id="showComment" resultMap="CommentResultMap">
+        SELECT * FROM comment ORDER BY datetime
+    </select>
+
+    <!--将特定id的评论删除-->
+    <delete id="delComment">
+        DELETE FROM comment WHERE id = #{id}
+    </delete>
+
     <!--<insert id="addComment">-->
     <!--INSERT INTO comment(id,post,name,comment) VALUES (1,#{post},#{name},#{comment})-->
     <!--</insert>-->

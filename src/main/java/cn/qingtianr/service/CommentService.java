@@ -24,7 +24,7 @@ public interface CommentService {
     public String delPostComment();
 
     //  后端删除评论功能
-    public String delComment();
+    public Boolean delComment(Comment comment);
 
     //  后台修改评论功能
 //  好像不需要这个功能

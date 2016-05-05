@@ -61,10 +61,10 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="backend_main">主页<span class="sr-only">(current)</span></a></li>
+            <li><a href="backend_main">主页<span class="sr-only">(current)</span></a></li>
             <li><a href="manageaction">看文章</a></li>
             <li><a href="backend_write">写文章</a></li>
-            <li><a href="showCommentAction">看评论</a></li>
+            <li class="active"><a href="showCommentAction">看评论</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Nav item</a></li>
@@ -80,42 +80,46 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-         <h2 class="sub-header">后台管理</h2>
-          <div>
-            <p>A bird is known by its note, and a man by his talk.</p>
-
-            <p>闻其歌知其鸟，听其言知其人。</p>
-
-            <p>A blind man who leans against a wall imagines that it's the boundary of the world.</p>
-
-            <p>坐井观天。</p>
-
-            <p>Absence sharpens love, presence strengthens it.</p>
-
-            <p>相聚爱益切，离别情更深。</p>
-
-            <p>A burnt child dreads the fire.</p>
-
-            <p>一朝被蛇咬，十年怕井绳。</p>
-
-            <p>Accidents will happen.</p>
-
-            <p>天有不测风云。</p>
-
-            <p>A clean hand wants no washing.</p>
-
-            <p>身正不怕影子斜。</p>
-
-            <p>A clear conscience is a soft pillow.</p></p>
-
-            <p>问心无愧，高枕无忧。</p>
-
-            <p>A clear conscience is a sure card.</p>
-
-            <p>光明磊落，胜券在握。</p>
-
-            <p>A clear conscience laughs at false accusations.</p>
-          </div>
+         <h2 class="sub-header">评论列表</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+                <s:iterator value="commentlist" var="name">
+                  <tr>
+                  <%--通过这个url来传递http的参数--%>
+                  <td>#</td>
+                  <%--<s:url action="updateaction" namespace="/" id="updateArticleId">--%>
+                    <%--<s:param name="title" value="#name.title"></s:param>--%>
+                  <%--</s:url>--%>
+                  <s:url action="delCommentAction" namespace="/" id="delCommentActionId">
+                    <s:param name="comment.id" value="#name.id"></s:param>
+                  </s:url>
+                  <td><s:property value="#name.name"/></td>
+                  <td><s:property value="#name.datetime"/></td>
+                  <td><s:property value="#name.comment"/></td>
+                  <%--<td><s:a href="%{updateArticleId}"><button type="button" class="btn btn-warning btn-sm">修改</button></s:a></td>--%>
+                  <td><s:a href="%{delCommentActionId}"><button tyep="button" class="btn btn-danger btn-sm">删除</button></s:a><br/></td>
+                    </tr>
+                </s:iterator>
+              </tbody>
+            </table>
+          </div><!-- table-responsive -->
         </div>
       </div>
     </div>

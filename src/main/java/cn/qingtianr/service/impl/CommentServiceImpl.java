@@ -19,10 +19,11 @@ public class CommentServiceImpl implements CommentService{
         return null;
     }
 
-//  将数据库中所有的评论取出来，并按时间排序
+//  后端显示评论功能，将数据库中所有的评论取出来，并按时间排序
     @Override
     public ArrayList<Comment> showComment() {
-        return null;
+        ArrayList<Comment> commentlist = commentdao.showComment();
+        return commentlist;
     }
 
 //  前端页面显示功能
@@ -38,8 +39,13 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
-    public String delComment() {
-        return null;
+    public Boolean delComment(Comment comment) {
+        boolean flag = false;
+        int flag2 = commentdao.delComment(comment);
+        if(flag2 > 0){
+            flag = true;
+        }
+        return flag;
     }
 
     @Override

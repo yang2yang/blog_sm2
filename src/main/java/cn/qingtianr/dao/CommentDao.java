@@ -13,7 +13,7 @@ public interface CommentDao {
     public int addComment(Comment comment);
 
     //  后台显示评论功能
-    public String showComment();
+    public ArrayList<Comment> showComment();
 
     //  前端页面显示评论
     public ArrayList<Comment> showPostComment(Article article);
@@ -22,7 +22,7 @@ public interface CommentDao {
     public String delPostComment();
 
     //  后端删除评论功能
-    public String delComment();
+    public int delComment(Comment comment);
 
     //  后台修改评论功能
 //  好像不需要这个功能

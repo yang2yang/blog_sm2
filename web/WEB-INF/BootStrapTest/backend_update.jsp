@@ -67,7 +67,7 @@
             <li><a href="backend_main">主页<span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="manageaction">看文章</a></li>
             <li><a href="backend_write">写文章</a></li>
-            <li><a href="#">Export</a></li>
+            <li><a href="showCommentAction">看评论</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Nav item</a></li>
