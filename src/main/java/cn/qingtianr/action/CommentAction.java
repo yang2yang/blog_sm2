@@ -32,11 +32,12 @@ public class CommentAction extends ActionSupport{
     public String delPostComment(){
         return null;
     }
-//  后端删除评论功能
+
+//  后端删除评论功能,并且显示功能
     public String delComment(){
-//        System.out.println(comment.getName());
+        System.out.println("in delComment()=" + comment.getId());
         commentsi.delComment(comment);
-        commentsi.showComment();
+        commentlist = commentsi.showComment();
         return "success";
     }
 //  后台修改评论功能

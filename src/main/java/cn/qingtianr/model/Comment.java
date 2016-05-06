@@ -50,4 +50,12 @@ public class Comment {
     public void setDatetime(Date datetime) {
         this.datetime = datetime;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
