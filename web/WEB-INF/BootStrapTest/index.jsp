@@ -41,7 +41,7 @@
           <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="login">back</a>
+          <a class="blog-nav-item" href="login">Back</a>
         </nav>
       </div>
     </div>
@@ -113,8 +113,8 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <h4>关于</h4>
+            <p>自己活着，就是为了使别人过得更美好。——雷锋</p>
           </div>
           <div class="sidebar-module">
             <h4>Archives</h4>
@@ -141,7 +141,7 @@
 
 
 <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>Blog powered by <a href="#">yang2yang</a></p>
       <p>
         <a href="#">Back to top</a>
       </p>
