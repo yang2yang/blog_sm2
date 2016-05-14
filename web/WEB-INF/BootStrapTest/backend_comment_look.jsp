@@ -93,13 +93,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
                 <s:iterator value="commentlist" var="name">
                   <tr>
                   <%--通过这个url来传递http的参数--%>

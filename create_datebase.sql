@@ -22,11 +22,11 @@ CREATE TABLE `article` (
   `archive` varchar(20) DEFAULT NULL,
   `content` text,
   `datetime` date DEFAULT NULL,
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `article_archive_table_archive_fk` (`archive`),
   CONSTRAINT `article_archive_table_archive_fk` FOREIGN KEY (`archive`) REFERENCES `archive_table` (`archive`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 INSERT INTO article(archive,title,content,datetime) VALUES ("a","timu","neirong","2016-05-07");
 
