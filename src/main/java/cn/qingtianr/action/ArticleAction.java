@@ -34,7 +34,6 @@ public class ArticleAction extends ActionSupport {
 //  调用写文章的函数，写完之后，返回一个articlelist的列表
     public String writeArticle()
     {
-        // todo
         Article article = new Article(title,archive,content,datetime);
         articlesi.addArticle(article);
         articlelist = articlesi.showArticle();
