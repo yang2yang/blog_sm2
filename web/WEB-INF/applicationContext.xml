@@ -10,6 +10,12 @@
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<!-- 启用spring mvc 注解 -->
+	<context:annotation-config />
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"
+		lazy-init="false" />
     <bean id="archivesi" class="main.java.cn.qingtianr.service.impl.ArchiveServiceImpl">
         <property name="archivedao" ref="archivedao"/>
     </bean>
@@ -57,8 +63,6 @@
         <property name="dataSource" ref="dataSource" />
          <!--自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:main/java/cn/qingtianr/dao/*.xml"></property>
-        <!--&lt;!&ndash; 扫描别名类?? &ndash;&gt;-->
-        <!--<property name="typeAliasesPackage" value="main.java.cn.qingtianr.model" />-->
     </bean>
 
     <bean id="userdao" class="org.mybatis.spring.mapper.MapperFactoryBean">
@@ -80,26 +84,4 @@
         <property name="mapperInterface" value="main.java.cn.qingtianr.dao.CommentDao" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
-
-
-    <!--<bean id="usersi" class="main.java.cn.qingtianr.service.impl.UserServiceImpl">-->
-        <!--<property name="userdao" ref = "userdao"/>-->
-    <!--</bean >-->
-
-
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
-    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-        <!--<property name="basePackage" value="main.java.cn.qingtianr.dao" />-->
-        <!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>-->
-    <!--</bean>-->
-
-    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
-    <!--<bean id="transactionManager"-->
-          <!--class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-        <!--<property name="dataSource" ref="dataSource" />-->
-    <!--</bean>-->
-
-    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-        <!--<property name="basePackage" value="main.java.cn.qingtianr.dao" />-->
-    <!--</bean>-->
 </beans>
