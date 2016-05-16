@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.qingtianr.blog.dao.impl.ArticleDaoImpl">
+
+	<!--传递的是一个对象，但是还是可以直接识别出来东西吗？？猛然发现这里是一个插入语句但是我使用的是却是选择的标签 -->
+	<insert id="addArticle"
+	parameterType="cn.qingtianr.blog.model.Article"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO article(
+			title,
+			archive,
+			content,
+			datetime
+		)
+		VALUES(
+			#{title},
+			#{archive},
+			#{content},
+			#{datetime}
+		)
+	</insert>
+
+	<!--这里需要返回一个数组类型的，但是不知道具体怎么写... -->
+	<!--这里使用一个resultMap来返回一个对象数组 -->
+	<resultMap id="ArticleResultMap" type="main.java.cn.qingtianr.model.Article">
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="archive" column="archive" />
+		<result property="content" column="content" />
+		<result property="datetime" column="datetime" />
+	</resultMap>
+
+	<select id="showArticle" resultMap="ArticleResultMap">
+		SELECT * FROM article ORDER BY datetime
+	</select>
+
+	<select id="getOneArticle" parameterType="String"
+		resultType="main.java.cn.qingtianr.model.Article">
+		SELECT * FROM article WHERE title = #{title}
+	</select>
+
+	<select id="updateArticle" parameterType="main.java.cn.qingtianr.model.Article">
+		update article set archive = #{archive} , content =#{content} where title =
+		#{title}
+	</select>
+
+	<select id="deleteArticle">
+		DELETE FROM article WHERE title = #{title}
+	</select>
+
+	<!--这个sql语句怎么返回一个正整数呢???现在这样返回的是一个count(*)的行数吧！！？ -->
+	<!--这样返回的不是行数？而是我想要的东西??这个mybaits的resultType到底是干什么用的？ -->
+	<select id="countArticle" resultType="int">
+		select count(*) from article WHERE archive = #{archive};
+	</select>
+
+	<resultMap id="DatetimeResultMap" type="main.java.cn.qingtianr.model.ArticleCount">
+		<result property="datetime" column="datetimeform" />
+		<result property="count" column="count" />
+	</resultMap>
+
+	<select id="countDatetime" resultMap="DatetimeResultMap">
+		SELECT DATE_FORMAT(datetime,'%Y-%m') AS
+		datetimeform,count(DATE_FORMAT(datetime,'%Y-%m')) AS count from
+		article group by DATE_FORMAT(datetime,'%Y-%m');
+	</select>
+
+	<!--通过这个sql语句可以选择出来同样年份和月份的时间 -->
+	<select id="showDatetimeArticle" resultMap="ArticleResultMap">
+		SELECT * from article WHERE YEAR(datetime)=YEAR(#{datetime}) AND
+		MONTH(datetime)=MONTH(#{datetime}) ORDER BY datetime
+	</select>
+</mapper>
