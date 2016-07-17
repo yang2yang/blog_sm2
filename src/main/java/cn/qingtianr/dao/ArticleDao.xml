@@ -19,6 +19,10 @@
         <result property="datetime" column="datetime"/>
     </resultMap>
 
+    <select id="showPageArticle"  resultMap="ArticleResultMap">
+        SELECT * FROM article ORDER by datetime desc LIMIT #{0},#{1}
+    </select>
+
     <select id="showArticle" resultMap="ArticleResultMap">
         SELECT * FROM article ORDER BY datetime
     </select>

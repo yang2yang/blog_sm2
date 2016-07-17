@@ -18,4 +18,5 @@ public interface ArticleDao {
     public int countArticle(String archive);
     public ArrayList<ArticleCount> countDatetime();
     public ArrayList<Article> showDatetimeArticle(Date datetime);
+    public ArrayList<Article> showPageArticle(int index,int number);
 }

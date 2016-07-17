@@ -26,4 +26,6 @@ public interface ArticleService{
     public ArrayList<ArticleCount> countDatetime();
 
     public ArrayList<Article> showDatetimeArticle(Date datetime);
+
+    public ArrayList<Article> showPageArticle(int index,int page);
 }

@@ -80,6 +80,11 @@ public class ArticleServiceImpl implements ArticleService{
         return articlelist;
     }
 
+    @Override
+    public ArrayList<Article> showPageArticle(int index, int page) {
+        return articledao.showPageArticle(index, page);
+    }
+
     public void setArticledao(ArticleDao articledao) {
         this.articledao = articledao;
     }

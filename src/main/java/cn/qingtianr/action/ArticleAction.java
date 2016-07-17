@@ -40,70 +40,24 @@ public class ArticleAction extends ActionSupport {
         return "lookarticle";
     }
 
-//  调用显示的文章的函数,并将结果显示出来。
-    public String showArticle()
-    {
 
-        ArrayList<Article> articlelist_copy = new ArrayList();
-        System.out.println("page="+page);
-        if(page == 0){
-            page = 1;
-        }
-        articlelist_copy = articlesi.showArticle();
-//      调用articlesi中的函数来将数据取出来
-        articlecount = new ArrayList<ArticleCount>();
+//  在主页中显示分页的内容
+    public String showArticle(){
+        System.out.println("page = " + page);
+        int number = 2;
+        articlelist = articlesi.showPageArticle(page,number);
+
         articlecount = articlesi.countDatetime();
-//        for(int i = 0;i < articlecount.size();i++){
-//            System.out.println(articlecount.get(i).getDatetime());
-//            System.out.println(articlecount.get(i).getCount());
-//        }
-//        for(int i = 0;i < articlelist_copy.size() - 1;i++){
-//            if(articlelist_copy.get(i).getDatetime() == articlelist_copy.get(i+1).getDatetime()){
-//
-//            }
-//        }
 
-        //设置每一页的文章数量
-        int pagesize = 2;
-        int firstarticle = (page - 1) * pagesize;
-        int lastarticle = page * pagesize;
-        if(lastarticle > articlelist_copy.size()){
-            lastarticle = articlelist_copy.size();
-        }
-
-        double pagedou = Math.ceil((double)articlelist_copy.size()/pagesize);
+        ArrayList<Article> articlelist_copy = articlesi.showArticle();
+        double pagedou = Math.ceil((double)articlelist_copy.size()/number);
         int pages = (int)pagedou;
         System.out.println(pages);
         numberlist = new int[pages];
         for(int i=0;i < pages;i++) {
             numberlist[i] = i+1;
-            System.out.println(i+"="+numberlist[i]);
         }
-        //列表每一次编辑的时候都需要强制转化一个类型
-        System.out.println(firstarticle+" "+lastarticle);
-        articlelist = articlelist_copy.subList(firstarticle,lastarticle);
-//        System.out.println("In action article[0].title = " + articlelist.get(0).getTitle());
-        System.out.println("hello I'm showArticle");
-//      从数据库里面取到了分类的数据后
-//        ArrayList<Archive> archivelist = archivesi.getAllArchive();
-//        for(int i = 0; i < archivelist.size();i++)
-//        {
-//            System.out.println("**************");
-//            System.out.println(archivelist.get(i).getArchive());
-//            System.out.println("**************");
-//        }
-//        archivecountlist = new ArrayList<ArchiveCount>();
-//      将所有list里面的数据都放在archivecountlist中
 
-//        for(int i = 0; i < archivelist.size();i++) {
-//            archivecountlist.add(new ArchiveCount(archivelist.get(i).getArchive(),0));
-//        }
-//      这里将archivecountlist中存储的分类进行统计,需要改成循环的来做
-//        for (int i = 0;i < archivecountlist.size();i++)
-//        {
-//            count = articlesi.countArticle(archivecountlist.get(i).getArchive());
-//            archivecountlist.get(i).setCount(count);
-//        }
         return "sayarticle";
     }
 
